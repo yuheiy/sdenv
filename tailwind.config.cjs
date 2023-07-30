@@ -4,7 +4,12 @@ const path = require('node:path');
 const postcss = require('postcss');
 const plugin = require('tailwindcss/plugin');
 
-// load CSS files via tailwind plugin to activate modifiers, tree-shaking, and IntelliSense
+/**
+ * Load CSS files via tailwind plugin to activate IntelliSense.
+ *
+ * This plugin reads the CSS files in the `./src/styles` directory and adds them to the
+ * appropriate Tailwind CSS layer (base, components, or utilities).
+ */
 const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
   const dirname = path.join(__dirname, './src/styles');
   const files = fs.readdirSync(dirname);
@@ -27,7 +32,12 @@ const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
   }
 });
 
-// https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+/**
+ * Create a responsive grid layout without media queries using CSS Grid.
+ *
+ * This plugin is based on a method provided by Andy Bell on piccalil.li.
+ * See: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+ */
 const autoGrid = plugin(
   ({ addComponents, matchComponents, theme }) => {
     const values = theme('autoGrid');
@@ -58,7 +68,13 @@ const autoGrid = plugin(
   },
 );
 
-// https://every-layout.dev/layouts/center/
+/**
+ * Create a center layout.
+ *
+ * This plugin creates a layout component that centers its content, based on a method
+ * described on every-layout.dev.
+ * See: https://every-layout.dev/layouts/center/
+ */
 const center = plugin(({ addComponents }) => {
   addComponents({
     '.center': {
@@ -70,7 +86,13 @@ const center = plugin(({ addComponents }) => {
   });
 });
 
-// https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571
+/**
+ * Handle font kerning.
+ *
+ * This plugin adds utility classes for controlling the font kerning.
+ * It is based on a method described in a GitHub comment on a CSS Working Group Drafts issue.
+ * See: https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571
+ */
 const kerning = plugin(({ addUtilities }) => {
   addUtilities({
     '.kerning-none': {
