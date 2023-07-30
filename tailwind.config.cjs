@@ -4,7 +4,7 @@ const path = require('node:path');
 const postcss = require('postcss');
 const plugin = require('tailwindcss/plugin');
 
-// load CSS files via tailwind config to activate IntelliSense, modifiers, and tree-shaking
+// load CSS files via tailwind plugin to activate modifiers, tree-shaking, and IntelliSense
 const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
   const dirname = path.join(__dirname, './src/styles');
   const files = fs.readdirSync(dirname);
