@@ -8,7 +8,7 @@ sdenvは、ウェブアプリケーションではないウェブサイトを開
 - [Tailwind CSS](https://tailwindcss.com/): ユーティリティファーストCSSフレームワーク
 - [Alpine.js](https://alpinejs.dev/): HTML上に直接振る舞いを記述できるJavaScriptフレームワーク
 
-sdenvを利用するに当たっては、これらのツールの使い方を理解している必要があります。理解が不十分な点があれば、それぞれの公式ドキュメントなどを参照してください。
+sdenvを利用する際には、これらのツールの使い方を理解している必要があります。理解が不十分な点があれば、それぞれの公式ドキュメントなどを参照してください。
 
 加えて、これらのツールを快適に使用できるように、[ESLint](https://eslint.org/)、[Prettier](https://prettier.io/)、[VSCode](https://code.visualstudio.com/)の設定が組み込まれています。
 
