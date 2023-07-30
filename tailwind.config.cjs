@@ -19,7 +19,8 @@ const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
         components: addComponents,
         utilities: addUtilities,
       }[layer];
-      const styles = postcss.parse(fs.readFileSync(path.join(dirname, file), 'utf8'));
+      const content = fs.readFileSync(path.join(dirname, file), 'utf8');
+      const styles = postcss.parse(content);
 
       addStyles(styles.nodes);
     }
