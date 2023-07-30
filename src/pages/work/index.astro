@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Hero from '@/components/Hero.astro';
+import Layout from '@/layouts/Layout.astro';
+
+const title = '実績';
+const description = '';
+
+const workEntries = (await getCollection('work')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout title={title} description={description}>
+  <main class="center">
+    <Hero title={title} />
+
+    <ol class="mt-6 list-disc space-y-1 pl-8">
+      {
+        workEntries.map((entry) => (
+          <li>
+            <a
+              class="text-sky-600 hover:text-sky-800 hover:underline"
+              href={`/work/${entry.slug}/`}
+            >
+              {entry.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </main>
+</Layout>

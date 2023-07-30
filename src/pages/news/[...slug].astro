@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('news');
+  return newsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry: entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const dateFormat = new Intl.DateTimeFormat('ja-JP', { dateStyle: 'long' });
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <main>
+    <article>
+      <header class="mb-12 border-b border-zinc-200 py-12">
+        <div class="center">
+          <p class="text-sm text-zinc-500">
+            <time datetime={entry.data.pubDate.toISOString()}
+              >{dateFormat.format(entry.data.pubDate)}</time
+            >
+          </p>
+          <h1 class="mt-3 text-xl font-bold kerning-all">{entry.data.title}</h1>
+        </div>
+      </header>
+      <div class="prose center">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>

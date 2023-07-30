@@ -1,39 +1,151 @@
---- 
+---
+import { SITE_TITLE } from '@/consts';
+
 interface Props {
-	title: string;
+  title?: string;
+  tagline?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  is404?: boolean;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  tagline,
+  description,
+  ogImage = '/ogp.png',
+  ogType = 'website',
+  is404 = false,
+} = Astro.props;
+
+const canonicalURL = !is404 && new URL(Astro.url.pathname, Astro.site);
+const resolvedOgImage = new URL(ogImage, Astro.site);
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+{/* https://bugs.chromium.org/p/chromium/issues/detail?id=1378462 */}
+{/* https://schepp.dev/posts/smooth-scrolling-and-page-search/ */}
+<html
+  class="break-words underline-offset-[0.125em] kerning-none [line-break:normal] focus-within:motion-reduce:scroll-smooth"
+  lang="ja"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title set:html={[title, SITE_TITLE, tagline].filter(Boolean).join(' &#8211; ')} />
+
+    {description && <meta name="description" content={description} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@_yuheiy" />
+    <meta name="twitter:title" content={title || SITE_TITLE} />
+
+    <meta property="og:title" content={title || tagline} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={resolvedOgImage} />
+    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta property="og:locale" content="ja_JP" />
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+
+  <body class="min-h-[100dvh] bg-white text-zinc-900">
+    <header class="sticky top-0 z-10 bg-zinc-900 text-zinc-100/80" x-data="{ isMenuOpen: false }">
+      <nav class="center flex items-center gap-x-6">
+        <a
+          class="mr-auto py-2 text-xl font-bold transition [&:any-link]:hover:text-zinc-100"
+          href={Astro.url.pathname !== '/' ? '/' : null}
+        >
+          {SITE_TITLE}
+        </a>
+        <button
+          class="py-2 text-sm transition hover:text-zinc-100 sm:hidden"
+          type="button"
+          @click="isMenuOpen = true">メニュー</button
+        >
+        {
+          [
+            ['はじめに', '/about/'],
+            ['お知らせ', '/news/'],
+            ['実績', '/work/'],
+          ].map(([label, href]) => (
+            <a class="hidden py-2 text-sm transition hover:text-zinc-100 sm:inline" href={href}>
+              {label}
+            </a>
+          ))
+        }
+      </nav>
+      <div x-dialog x-model="isMenuOpen" style="display: none;">
+        <template x-teleport="#js-overlay-container">
+          <div class="fixed inset-0 bg-black/80" x-dialog:overlay x-transition.opacity></div>
+        </template>
+        <div
+          class="absolute inset-x-0 top-full border-t border-zinc-800 bg-zinc-900 sm:hidden"
+          x-dialog:panel
+          x-collapse
+        >
+          <ul class="center divide-y divide-zinc-800">
+            {
+              [
+                ['はじめに', '/about/'],
+                ['お知らせ', '/news/'],
+                ['実績', '/work/'],
+              ].map(([label, href]) => (
+                <li class="">
+                  <a class="block py-3 text-sm transition hover:text-zinc-100" href={href}>
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <slot />
+
+    {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
+    <footer class="sticky top-full mt-12 bg-zinc-900 py-2 text-zinc-100/80">
+      <nav class="center">
+        <p class="flex flex-wrap justify-center gap-x-6">
+          {
+            [
+              ['ホーム', '/'],
+              ['はじめに', '/about/'],
+              ['お知らせ', '/news/'],
+              ['実績', '/work/'],
+            ].map(([label, href]) => (
+              <a class="py-2 text-sm transition hover:text-zinc-100" href={href}>
+                {label}
+              </a>
+            ))
+          }
+        </p>
+      </nav>
+    </footer>
+
+    {/* https://atfzl.com/don-t-attach-tooltips-to-document-body */}
+    <div id="js-overlay-container"></div>
+
+    <script>
+      import collapse from '@alpinejs/collapse';
+      import focus from '@alpinejs/focus';
+      import ui from '@alpinejs/ui';
+      // eslint-disable-next-line import/no-named-as-default
+      import Alpine from 'alpinejs';
+
+      Alpine.plugin(collapse);
+      Alpine.plugin(focus);
+      Alpine.plugin(ui);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).Alpine = Alpine;
+      Alpine.start();
+    </script>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151A;
-		background-size: 224px;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>

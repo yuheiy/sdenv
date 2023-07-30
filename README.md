@@ -1,54 +1,44 @@
-# Astro Starter Kit: Basics
+# sdenv
 
-```
-npm create astro@latest -- --template basics
-```
+sdenvは、ウェブアプリケーションではなくウェブサイトを開発するためのベストプラクティスに基づいて構成されたフロントエンド開発環境です。やりすぎないちょうどいい使い勝手の実現を念頭に置いて設計されている、より多くのウェブサイト開発者のためのツールキットです。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 特徴
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- ウェブサイト構築のためのフレームワークである[Astro](https://astro.build/)を中心に構成されています
+- ユーティリティファーストCSSフレームワークの[Tailwind CSS](https://tailwindcss.com/)を採用しています
+- HTML上に直接振る舞いを記述できるJavaScriptフレームワークの[Alpine.js](https://alpinejs.dev/)を採用しています
+- これらのツールを快適に使用できるように[ESLint](https://eslint.org/)、[Prettier](https://prettier.io/)、[VSCode](https://code.visualstudio.com/)の設定が組み込まれています
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 参考資料
 
-## 🚀 Project Structure
+sdenvを利用するためには、前提としてAstro、Tailwind CSS、Alpine.jsの使い方を理解している必要があります。理解が不十分な点がある場合には、それぞれの公式ドキュメントなどを参照してください。
 
-Inside of your Astro project, you'll see the following folders and files:
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Alpine.js](https://alpinejs.dev/)
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+## 使い方
+
+依存パッケージのインストール:
+
+```bash
+npm ci
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+ローカルサーバーの起動:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+本番用ビルド:
 
-## 🧞 Commands
+```bash
+npm run build
+```
 
-All commands are run from the root of the project, from a terminal:
+自動テスト:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm test
+```

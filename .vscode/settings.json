@@ -1,0 +1,31 @@
+{
+  /* Text Editor */
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on", // https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/33
+  /* Text Editor > Formatting */
+  "editor.formatOnSave": true,
+  /* Text Editor > Suggestions */
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  /* Text Editor > Files */
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  /* Extensions > CSS Language Feature > CSS */
+  "css.validate": false,
+  /* Extensions > Emmet */
+  "emmet.includeLanguages": {
+    "astro": "html",
+    "tailwindcss": "css"
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
+  "tailwindCSS.emmetCompletions": true,
+  /* Extensions > CSS Language Feature > TypeScript */
+  "typescript.tsdk": "node_modules/typescript/lib",
+  /* Extensions > ESLint */
+  "eslint.validate": ["javascript", "javascriptreact", "astro"]
+}
