@@ -138,6 +138,8 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
       import ui from '@alpinejs/ui';
       // eslint-disable-next-line import/no-named-as-default
       import Alpine from 'alpinejs';
+      import components from '@/client/components';
+      import stores from '@/client/stores';
 
       // https://vitejs.dev/guide/env-and-mode.html#env-variables
       if (import.meta.env.DEV) {
@@ -152,6 +154,8 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
       Alpine.plugin(collapse);
       Alpine.plugin(focus);
       Alpine.plugin(ui);
+      Alpine.plugin(components);
+      Alpine.plugin(stores);
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).Alpine = Alpine;
