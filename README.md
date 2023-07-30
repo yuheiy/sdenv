@@ -50,7 +50,7 @@ npm run lint
 npm run lint:fix
 ```
 
-## ディレクトリ構成
+## ファイル構成
 
 ```
 .
