@@ -68,8 +68,7 @@ npm run lint:fix
 ├── astro.config.ts     # Astroの設定
 ├── package.json        # 依存パッケージを管理するための設定
 ├── tailwind.config.cjs # Tailwind CSSの設定
-├── tsconfig.json       # TypeScriptの設定
-└── vitest.config.ts    # Vitestの設定
+└── tsconfig.json       # TypeScriptの設定
 ```
 
 詳しくは、Astro公式ドキュメントの「[Project Structure](https://docs.astro.build/en/core-concepts/project-structure/)」も参照してください。
