@@ -68,48 +68,6 @@ const autoGrid = plugin(
   },
 );
 
-/**
- * Create a center layout.
- *
- * This plugin creates a layout component that centers its content, based on a method
- * described on every-layout.dev.
- * See: https://every-layout.dev/layouts/center/
- */
-const center = plugin(({ addComponents }) => {
-  addComponents({
-    '.center': {
-      boxSizing: 'content-box',
-      maxWidth: '60rem',
-      marginInline: 'auto',
-      paddingInline: 'max(5vw, 1rem)',
-    },
-  });
-});
-
-/**
- * Handle font kerning.
- *
- * This plugin adds utility classes for controlling the font kerning.
- * It is based on a method described in a GitHub comment on a CSS Working Group Drafts issue.
- * See: https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571
- */
-const kerning = plugin(({ addUtilities }) => {
-  addUtilities({
-    '.kerning-none': {
-      fontKerning: 'none',
-      fontFeatureSettings: 'normal',
-    },
-    '.kerning-normal': {
-      fontKerning: 'normal',
-      fontFeatureSettings: 'normal',
-    },
-    '.kerning-all': {
-      fontKerning: 'normal',
-      fontFeatureSettings: "'palt'",
-    },
-  });
-});
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -124,7 +82,5 @@ module.exports = {
     require('tailwindcss-animate'),
     cssFiles,
     autoGrid,
-    center,
-    kerning,
   ],
 };
