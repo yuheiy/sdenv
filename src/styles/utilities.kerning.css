@@ -17,6 +17,6 @@
 }
 
 .kerning-all {
-  font-kerning: none;
+  font-kerning: normal;
   font-feature-settings: 'palt';
 }
