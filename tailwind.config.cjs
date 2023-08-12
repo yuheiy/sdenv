@@ -5,13 +5,17 @@ const postcss = require('postcss');
 const plugin = require('tailwindcss/plugin');
 
 /**
- * Load CSS files via tailwind plugin to activate IntelliSense.
+ * Loads CSS files through Tailwind’s plugin system to enable IntelliSense support.
  *
- * This plugin reads the CSS files in the `./src/styles` directory and adds them to the
- * appropriate Tailwind CSS layer (base, components, or utilities).
+ * This plugin scans CSS files located in the `src/styles` directory and appends them to their
+ * respective layers based on the file naming convention:
+ *
+ * - Files named `src/styles/base.{name}.css` are added to the base layer.
+ * - Files named `src/styles/components.{name}.css` are added to the components layer.
+ * - Files named `src/styles/utilities.{name}.css` are added to the utilities layer.
  */
 const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
-  const dirname = path.join(__dirname, './src/styles');
+  const dirname = path.join(__dirname, 'src/styles');
   const files = fs.readdirSync(dirname);
 
   for (const file of files) {
