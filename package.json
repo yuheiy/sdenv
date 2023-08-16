@@ -15,7 +15,7 @@
     "@alpinejs/focus": "3.12.3",
     "@alpinejs/ui": "3.12.3-beta.0",
     "@astrojs/mdx": "0.19.7",
-    "@astrojs/sitemap": "2.0.1",
+    "@astrojs/sitemap": "2.0.2",
     "@astrojs/tailwind": "4.0.0",
     "@tailwindcss/container-queries": "0.1.1",
     "@types/alpinejs": "3.7.2",
