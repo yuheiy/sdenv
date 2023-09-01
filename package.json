@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "6.4.0",
     "chokidar-cli": "3.0.0",
     "concurrently": "8.2.0",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-import-resolver-typescript": "3.6.0",
     "eslint-plugin-astro": "0.28.0",
