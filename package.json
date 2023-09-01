@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "3.12.3",
-    "@alpinejs/focus": "3.12.3",
+    "@alpinejs/focus": "3.13.0",
     "@alpinejs/ui": "3.12.3-beta.0",
     "@astrojs/mdx": "0.19.7",
     "@astrojs/sitemap": "2.0.2",
