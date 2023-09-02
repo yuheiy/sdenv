@@ -1,0 +1,18 @@
+diff --git a/node_modules/astro/import-meta.d.ts b/node_modules/astro/import-meta.d.ts
+index 23d951c..47d5ef2 100644
+--- a/node_modules/astro/import-meta.d.ts
++++ b/node_modules/astro/import-meta.d.ts
+@@ -13,11 +13,11 @@ interface ImportMeta {
+ 
+ 	readonly env: ImportMetaEnv;
+ 
+-	glob: import('vite/types/importGlob').ImportGlobFunction;
++	glob: import('vite').ImportGlobFunction;
+ 	/**
+ 	 * @deprecated Use `import.meta.glob('*', { eager: true })` instead
+ 	 */
+-	globEager: import('vite/types/importGlob').ImportGlobEagerFunction;
++	globEager: import('vite').ImportGlobEagerFunction;
+ }
+ 
+ interface ImportMetaEnv {
