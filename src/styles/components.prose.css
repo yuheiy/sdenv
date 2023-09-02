@@ -1,31 +1,31 @@
 .prose {
   @apply space-y-4;
 
-  & h2 {
+  & :where(h2) {
     @apply text-2xl font-bold;
   }
 
-  & h3 {
+  & :where(h3) {
     @apply text-lg font-bold;
   }
 
-  & * + :is(h2, h3) {
+  & :where(* + :is(h2, h3)) {
     @apply !mt-6;
   }
 
-  & :is(ol, ul) {
-    @apply pl-8 list-[revert];
+  & :where(ol, ul) {
+    @apply list-[revert] pl-8;
   }
 
-  & blockquote {
+  & :where(blockquote) {
     @apply ml-8;
-
-    & + figcaption {
-      @apply ml-8;
-    }
   }
 
-  & figure {
+  & :where(blockquote + figcaption) {
+    @apply ml-8;
+  }
+
+  & :where(figure) {
     @apply space-y-2;
   }
 }
