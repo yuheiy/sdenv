@@ -19,7 +19,7 @@
 
   & :where(ol, ul) {
     padding-left: theme(spacing.8);
-    list-style-type: revert;
+    list-style: revert;
   }
 
   & :where(blockquote) {
