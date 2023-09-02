@@ -7,7 +7,7 @@
 
 .center {
   box-sizing: content-box;
-  max-width: 60rem;
   margin-inline: auto;
   padding-inline: max(5vw, theme(spacing.4));
+  max-width: 60rem;
 }

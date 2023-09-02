@@ -1,31 +1,36 @@
 .prose {
-  @apply space-y-4;
+  & > :where(* + *) {
+    margin-top: theme(spacing.4);
+  }
 
   & :where(h2) {
-    @apply text-2xl font-bold;
+    font-weight: theme(fontWeight.bold);
+    font-size: theme(fontSize.2xl);
   }
 
   & :where(h3) {
-    @apply text-lg font-bold;
+    font-weight: theme(fontWeight.bold);
+    font-size: theme(fontSize.lg);
   }
 
   & :where(* + :is(h2, h3)) {
-    @apply !mt-6;
+    margin-top: theme(spacing.6);
   }
 
   & :where(ol, ul) {
-    @apply list-[revert] pl-8;
+    padding-left: theme(spacing.8);
+    list-style-type: revert;
   }
 
   & :where(blockquote) {
-    @apply ml-8;
+    margin-left: theme(spacing.8);
   }
 
   & :where(blockquote + figcaption) {
-    @apply ml-8;
+    margin-left: theme(spacing.8);
   }
 
-  & :where(figure) {
-    @apply space-y-2;
+  & :where(figure > * + *) {
+    margin-top: theme(spacing.2);
   }
 }
