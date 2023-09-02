@@ -38,9 +38,9 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@_yuheiy" />
-    <meta name="twitter:title" content={title || SITE_TITLE} />
+    <meta name="twitter:title" content={title ?? SITE_TITLE} />
 
-    <meta property="og:title" content={title || tagline} />
+    <meta property="og:title" content={title ?? tagline} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={resolvedOgImage} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
