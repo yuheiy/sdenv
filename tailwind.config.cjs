@@ -50,7 +50,7 @@ const autoGrid = plugin(
       {
         'auto-grid': (value) => ({
           display: 'grid',
-          gridTemplateColumns: `repeat(auto-fill, minmax(min(${value}, 100%), 1fr))`,
+          'grid-template-columns': `repeat(auto-fill, minmax(min(${value}, 100%), 1fr))`,
         }),
       },
       { values },
@@ -59,7 +59,7 @@ const autoGrid = plugin(
     addComponents({
       '.auto-grid-none': {
         display: 'revert',
-        gridTemplateColumns: 'revert',
+        'grid-template-columns': 'revert',
       },
     });
   },
