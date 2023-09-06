@@ -46,7 +46,7 @@
     "vitest": "0.34.3"
   },
   "engines": {
-    "node": "20"
+    "node": ">=18.14.1"
   },
   "packageManager": "npm@10.0.0",
   "private": true
