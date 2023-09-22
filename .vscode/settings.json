@@ -25,7 +25,7 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
   "tailwindCSS.emmetCompletions": true,
   /* Extensions > CSS Language Feature > TypeScript */
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.preferences.importModuleSpecifierEnding": "minimal",
   "typescript.tsdk": "node_modules/typescript/lib",
   /* Extensions > ESLint */
