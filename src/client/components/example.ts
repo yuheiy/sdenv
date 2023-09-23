@@ -7,5 +7,5 @@ export default function () {
         console.log('init component');
       }
     },
-  } satisfies AlpineComponent;
+  } satisfies AlpineComponent<object>;
 }

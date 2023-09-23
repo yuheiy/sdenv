@@ -1,3 +1,5 @@
+import type { Stores } from 'alpinejs';
+
 export default function () {
   return {
     init() {
@@ -5,5 +7,5 @@ export default function () {
         console.log('init store');
       }
     },
-  };
+  } satisfies Stores;
 }
