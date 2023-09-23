@@ -46,7 +46,8 @@
     "vitest": "0.34.5"
   },
   "engines": {
-    "node": ">=18.14.1"
+    "//npm@10 requires >=18.17.0": "https://github.com/npm/cli/blob/v10.0.0/package.json#L257",
+    "node": ">=18.17.0"
   },
   "packageManager": "npm@10.1.0",
   "private": true
