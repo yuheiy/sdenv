@@ -58,8 +58,6 @@ npm run lint:fix
 ├── public/             # ビルドによって加工されないアセット
 ├── src/                # メインのソースコード
 │   ├── client/         # クライアントサイドで利用されるソースコード
-│   │   ├── components/ # Alpine.jsのコンポーネント
-│   │   └── stores/     # Alpine.jsのストア
 │   ├── components/     # Astroコンポーネント
 │   ├── content/        # Astroのコンテンツコレクション
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
