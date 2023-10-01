@@ -28,7 +28,7 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.7.2",
+    "@typescript-eslint/eslint-plugin": "6.7.3",
     "@typescript-eslint/parser": "6.7.2",
     "chokidar-cli": "3.0.0",
     "concurrently": "8.2.1",
