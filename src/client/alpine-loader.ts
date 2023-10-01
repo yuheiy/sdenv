@@ -1,12 +1,12 @@
-import type { PluginCallback } from 'alpinejs';
+import type { Alpine, PluginCallback } from 'alpinejs';
 
-export const app: PluginCallback = (Alpine) => {
+export function app(Alpine: Alpine) {
   const modules = import.meta.glob<PluginCallback>('./**/*.{component,store}.ts', {
-    import: 'plugin',
+    import: 'default',
     eager: true,
   });
 
   for (const plugin of Object.values(modules)) {
     Alpine.plugin(plugin);
   }
-};
+}

@@ -1,6 +1,6 @@
-import type { PluginCallback } from 'alpinejs';
+import type { Alpine } from 'alpinejs';
 
-export const plugin: PluginCallback = (Alpine) => {
+export default function (Alpine: Alpine) {
   Alpine.data('example', () => ({
     init() {
       if (import.meta.env.DEV) {
@@ -8,4 +8,4 @@ export const plugin: PluginCallback = (Alpine) => {
       }
     },
   }));
-};
+}
