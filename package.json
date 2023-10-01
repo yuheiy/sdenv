@@ -22,7 +22,7 @@
     "@tailwindcss/container-queries": "0.1.1",
     "@types/alpinejs": "3.13.2",
     "alpinejs": "3.13.0",
-    "astro": "3.1.2",
+    "astro": "3.2.0",
     "patch-package": "8.0.0",
     "rollup-plugin-visualizer": "5.9.2",
     "tailwindcss-animate": "1.0.7"
