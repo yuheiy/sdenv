@@ -7,16 +7,16 @@
  */
 
 .kerning-none {
-  font-feature-settings: normal;
   font-kerning: none;
+  font-feature-settings: normal;
 }
 
 .kerning-normal {
-  font-feature-settings: normal;
   font-kerning: normal;
+  font-feature-settings: normal;
 }
 
 .kerning-all {
-  font-feature-settings: 'palt';
   font-kerning: normal;
+  font-feature-settings: 'palt';
 }
