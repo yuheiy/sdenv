@@ -42,7 +42,7 @@
     "prettier": "3.0.3",
     "prettier-plugin-astro": "0.12.0",
     "prettier-plugin-css-order": "2.0.0",
-    "vitest": "0.34.5"
+    "vitest": "0.34.6"
   },
   "engines": {
     "//npm@10 requires >=18.17.0": "https://github.com/npm/cli/blob/v10.0.0/package.json#L257",
