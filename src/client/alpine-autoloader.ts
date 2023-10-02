@@ -1,7 +1,7 @@
 import type { Alpine, PluginCallback } from 'alpinejs';
 
-export function app(Alpine: Alpine) {
-  const modules = import.meta.glob<PluginCallback>('./**/*.{component,store}.ts', {
+export function autoLoader(Alpine: Alpine) {
+  const modules = import.meta.glob<PluginCallback>('./**/*.alpine.ts', {
     import: 'default',
     eager: true,
   });
