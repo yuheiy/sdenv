@@ -57,11 +57,11 @@ npm run lint:fix
 ├── @types/             # 依存パッケージ用の型定義
 ├── public/             # ビルドによって加工されないアセット
 ├── src/                # メインのソースコード
-│   ├── client/         # クライアントサイドで利用されるソースコード
 │   ├── components/     # Astroコンポーネント
 │   ├── content/        # Astroのコンテンツコレクション
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
 │   ├── pages/          # ページと対応するAstroコンポーネント
+│   ├── scripts/        # クライアントサイドで利用されるスクリプト
 │   └── styles/         # Tailwind CSSで読み込まれるCSSファイル
 ├── astro.config.ts     # Astroの設定
 ├── package.json        # 依存パッケージを管理するための設定
