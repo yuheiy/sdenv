@@ -57,7 +57,7 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
 
   <body class="min-h-[100svh] bg-white text-zinc-900">
     <header class="sticky top-0 z-10 bg-zinc-900 text-zinc-100/80" x-data="{ isMenuOpen: false }">
-      <nav class="center flex items-center gap-x-6">
+      <nav class="wrapper flex items-center gap-x-6">
         <a
           class="mr-auto py-2 text-xl font-bold transition [&:any-link]:hover:text-zinc-100"
           href={Astro.url.pathname !== '/' ? '/' : null}
@@ -90,7 +90,7 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
           x-dialog:panel
           x-collapse
         >
-          <ul class="center divide-y divide-zinc-800">
+          <ul class="wrapper divide-y divide-zinc-800">
             {
               [
                 ['はじめに', '/about/'],
@@ -113,7 +113,7 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
     <footer class="sticky top-full mt-12 bg-zinc-900 py-2 text-zinc-100/80">
-      <nav class="center">
+      <nav class="wrapper">
         <p class="flex flex-wrap justify-center gap-x-6">
           {
             [
