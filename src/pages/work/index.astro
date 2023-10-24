@@ -6,7 +6,7 @@ import Layout from '@/layouts/Layout.astro';
 const title = '実績';
 const description = '';
 
-const workEntries = (await getCollection('work')).sort(
+const workEntries = (await getCollection('work')).toSorted(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
