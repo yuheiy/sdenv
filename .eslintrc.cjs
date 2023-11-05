@@ -13,13 +13,13 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/no-import-type-side-effects': 'error',
     'import/no-unresolved': [
       'error',
       {
         ignore: ['^astro:.+'],
       },
     ],
-    'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
     'import/order': [
       'error',
       {
