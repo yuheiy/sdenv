@@ -47,6 +47,6 @@
   "engines": {
     "node": "20"
   },
-  "packageManager": "npm@10.2.2",
+  "packageManager": "npm@10.1.0",
   "private": true
 }
