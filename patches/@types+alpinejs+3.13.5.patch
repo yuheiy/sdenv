@@ -1,8 +1,8 @@
 diff --git a/node_modules/@types/alpinejs/index.d.ts b/node_modules/@types/alpinejs/index.d.ts
-index 51aa655..bdecf9e 100644
+index 1080f9e..483374e 100644
 --- a/node_modules/@types/alpinejs/index.d.ts
 +++ b/node_modules/@types/alpinejs/index.d.ts
-@@ -157,7 +157,7 @@ interface XDataContext {
+@@ -150,7 +150,7 @@ interface XDataContext {
  }
  
  export interface Stores {
@@ -11,10 +11,10 @@ index 51aa655..bdecf9e 100644
  }
  
  export interface Magics<T> {
-@@ -372,7 +372,7 @@ export interface Alpine {
+@@ -365,7 +365,7 @@ export interface Alpine {
+     // eslint-disable-next-line @definitelytyped/no-unnecessary-generics
      data: <T_12 extends Record<string | symbol, unknown>>(
          name: string,
-         // eslint-disable-next-line @definitelytyped/no-unnecessary-generics
 -        callback: (...args: unknown[]) => AlpineComponent<T_12>, // Needed generic to properly autotype objects
 +        callback: (...args: any[]) => AlpineComponent<T_12>, // Needed generic to properly autotype objects
      ) => void;
