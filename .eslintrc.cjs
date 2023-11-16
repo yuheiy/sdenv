@@ -37,6 +37,7 @@ module.exports = {
         },
       },
     ],
+    'tailwindcss/classnames-order': 'off',
   },
   settings: {
     'import/resolver': {

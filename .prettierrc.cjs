@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: [require.resolve('prettier-plugin-astro'), require.resolve('prettier-plugin-css-order')],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-css-order', 'prettier-plugin-tailwindcss'],
   printWidth: 100,
   singleQuote: true,
   overrides: [
