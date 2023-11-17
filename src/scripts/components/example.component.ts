@@ -3,8 +3,20 @@ import Alpine from 'alpinejs';
 import invariant from 'tiny-invariant';
 
 Alpine.data('example', (initialValue = false) => {
+  // ensure that `initialValue` is of type Boolean
   invariant(typeof initialValue === 'boolean');
-  // then initialValue is inferred as a Boolean value
+  // then `initialValue` is inferred as a Boolean value
+
+  /**
+   * For more complex type guard, consider using superstruct:
+   * https://www.npmjs.com/package/superstruct
+   *
+   * @example
+   * import { assert, object, number, string } from 'superstruct';
+   * const User = object({ id: number(), name: string() });
+   * const data = { id: 1, name: 'Taro' };
+   * assert(data, User);
+   */
 
   return {
     init() {
