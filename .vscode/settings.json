@@ -25,8 +25,6 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
   "tailwindCSS.emmetCompletions": true,
   /* Extensions > CSS Language Feature > TypeScript */
-  "typescript.preferences.importModuleSpecifier": "shortest",
-  "typescript.preferences.importModuleSpecifierEnding": "minimal",
   "typescript.tsdk": "node_modules/typescript/lib",
   /* Extensions > ESLint */
   "eslint.validate": ["javascript", "javascriptreact", "astro"]
