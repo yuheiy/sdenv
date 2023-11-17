@@ -23,9 +23,7 @@ const { as: Tag = 'div', class: className, title, description, ...props } = Astr
 
   Alpine.data('hero', () => ({
     init() {
-      if (import.meta.env.DEV) {
-        console.log('init hero component');
-      }
+      console.log('init hero component');
     },
   }));
 </script>

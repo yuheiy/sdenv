@@ -3,8 +3,6 @@ import focus from '@alpinejs/focus';
 import ui from '@alpinejs/ui';
 // eslint-disable-next-line import/no-named-as-default
 import Alpine from 'alpinejs';
-import { components } from './components';
-import { stores } from './stores';
 
 // https://vitejs.dev/guide/env-and-mode.html#env-variables
 if (import.meta.env.DEV) {
@@ -19,8 +17,8 @@ if (import.meta.env.DEV) {
 Alpine.plugin(collapse);
 Alpine.plugin(focus);
 Alpine.plugin(ui);
-Alpine.plugin(components);
-Alpine.plugin(stores);
+
+import.meta.glob(['./components/**/*.component.ts', './stores/**/*.store.ts'], { eager: true });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).Alpine = Alpine;
