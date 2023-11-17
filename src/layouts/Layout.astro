@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from '@/consts';
+import { SITE_TITLE } from '../consts';
 
 interface Props {
   title?: string;
@@ -35,7 +35,7 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
 
     <title set:html={[title, SITE_TITLE, tagline].filter(Boolean).join(' &#8211; ')} />
 
-    <script src="@/scripts/main.ts"></script>
+    <script src="../scripts/main.ts"></script>
 
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />

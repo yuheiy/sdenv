@@ -23,13 +23,6 @@ module.exports = {
     'import/order': [
       'error',
       {
-        pathGroups: [
-          {
-            pattern: '@/**',
-            group: 'external',
-            position: 'after',
-          },
-        ],
         'newlines-between': 'never',
         alphabetize: {
           order: 'asc',
