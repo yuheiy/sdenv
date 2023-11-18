@@ -16,10 +16,10 @@ const plugin = require('tailwindcss/plugin');
  */
 const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
   const dirname = path.join(__dirname, 'src/styles');
-  const files = fs.readdirSync(dirname);
+  const filenames = fs.readdirSync(dirname);
 
-  for (const file of files) {
-    const matched = /^(base|components|utilities)\..+\.css$/.exec(file);
+  for (const filename of filenames) {
+    const matched = /^(base|components|utilities)\..+\.css$/.exec(filename);
 
     if (matched) {
       const layer = matched[1];
@@ -28,7 +28,7 @@ const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
         components: addComponents,
         utilities: addUtilities,
       }[layer];
-      const content = fs.readFileSync(path.join(dirname, file), 'utf8');
+      const content = fs.readFileSync(path.join(dirname, filename), 'utf8');
       const styles = postcss.parse(content);
 
       addStyles(styles.nodes);
