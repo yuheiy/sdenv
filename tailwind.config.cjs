@@ -7,31 +7,30 @@ const plugin = require('tailwindcss/plugin');
 /**
  * Loads CSS files through Tailwind’s plugin system to enable IntelliSense support.
  *
- * This plugin scans CSS files located in the `src/styles` directory and appends them to their
- * respective layers based on the file naming convention:
- *
- * - Files named `src/styles/base.{name}.css` are added to the base layer.
- * - Files named `src/styles/components.{name}.css` are added to the components layer.
- * - Files named `src/styles/utilities.{name}.css` are added to the utilities layer.
+ * This plugin scans CSS files from `src/styles/{base,components,utilities}` and appends them to
+ * their respective layers.
  */
 const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
-  const dirname = path.join(__dirname, 'src/styles');
-  const filenames = fs.readdirSync(dirname);
+  const layers = ['base', 'components', 'utilities'];
+  const stylesDir = path.join(__dirname, 'src/styles');
+  const addStylesMap = {
+    base: addBase,
+    components: addComponents,
+    utilities: addUtilities,
+  };
 
-  for (const filename of filenames) {
-    const matched = /^(base|components|utilities)\..+\.css$/.exec(filename);
+  for (const layer of layers) {
+    const layerDir = path.join(stylesDir, layer);
+    const files = fs.readdirSync(layerDir);
+    const addStyles = addStylesMap[layer];
 
-    if (matched) {
-      const layer = matched[1];
-      const addStyles = {
-        base: addBase,
-        components: addComponents,
-        utilities: addUtilities,
-      }[layer];
-      const content = fs.readFileSync(path.join(dirname, filename), 'utf8');
-      const styles = postcss.parse(content);
-
-      addStyles(styles.nodes);
+    for (const file of files) {
+      if (path.extname(file) === '.css') {
+        const filePath = path.join(layerDir, file);
+        const content = fs.readFileSync(filePath, 'utf8');
+        const styles = postcss.parse(content);
+        addStyles(styles.nodes);
+      }
     }
   }
 });
