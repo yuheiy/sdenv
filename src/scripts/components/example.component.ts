@@ -24,9 +24,11 @@ Alpine.data('example', (initialValue = false) => {
 
       const exampleStore = this.$store.example;
 
-      console.log({ count: exampleStore.count });
+      Alpine.effect(() => {
+        console.log({ count: exampleStore.count });
+      });
+
       exampleStore.increment();
-      console.log({ count: exampleStore.count });
     },
   };
 });
