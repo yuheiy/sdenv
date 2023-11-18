@@ -6,9 +6,13 @@ const name = 'example';
 const dataContext = {
   count: 0,
 
+  init() {
+    console.log('example store: init');
+  },
+
   increment() {
+    console.log('example store: increment');
     this.count++;
-    console.log('count have been incremented');
   },
 };
 

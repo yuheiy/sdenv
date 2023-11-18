@@ -47,6 +47,6 @@ const newsEntries = (await getCollection('news')).toSorted(
       </ol>
     </section>
 
-    <div x-data="example"></div>
+    <div x-data="example(100)"></div>
   </main>
 </Layout>
