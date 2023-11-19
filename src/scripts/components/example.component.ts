@@ -8,14 +8,14 @@ Alpine.data('example', (initialValue = 0) => {
   // then `initialValue` is inferred as a Number value
 
   /**
-   * For more complex type narrowing, consider using Superstruct:
-   * https://www.npmjs.com/package/superstruct
+   * For more complex type narrowing, consider using Valibot:
+   * https://www.npmjs.com/package/valibot
    *
    * @example
-   * import { assert, object, number, string } from 'superstruct';
-   * const User = object({ id: number(), name: string() });
-   * const data: unknown = { id: 1, name: 'Taro' };
-   * assert(data, User);
+   * import { is, number, object, string } from 'valibot';
+   * const UserSchema = object({ id: number(), name: string() });
+   * const user: unknown = { id: 1, name: 'Taro' };
+   * invariant(is(UserSchema, user));
    */
 
   return {
