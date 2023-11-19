@@ -14,8 +14,8 @@ Alpine.data('example', (initialValue = 0) => {
    * @example
    * import { assert, number, object, string } from 'superstruct';
    * const User = object({ id: number(), name: string() });
-   * const data: unknown = { id: 1, name: 'Taro' };
-   * assert(data, User);
+   * const input: unknown = { id: 1, name: 'Taro' };
+   * assert(input, User);
    */
 
   return {
