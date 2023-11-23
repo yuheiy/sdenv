@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Hero from '../../components/Hero.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -18,14 +19,14 @@ const { Content } = await entry.render();
 <Layout
   title={entry.data.title}
   description={entry.data.description}
-  ogImage={entry.data.heroImage}
+  openGraphImage={entry.data.heroImage.src}
 >
   <main>
     <article>
       <div class="wrapper">
         <Hero as="header" title={entry.data.title} />
       </div>
-      <img class="block h-96 w-full object-cover" src={entry.data.heroImage} alt="" />
+      <Image class="block h-96 w-full object-cover" src={entry.data.heroImage} alt="" />
       <div class="prose wrapper mt-12">
         <Content />
       </div>

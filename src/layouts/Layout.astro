@@ -1,11 +1,14 @@
 ---
 import { SITE_TITLE } from '../consts';
+import appleTouchIconImage from '../images/apple-touch-icon.png';
+import faviconImage from '../images/favicon.svg';
+import defaultOpenGraphImage from '../images/opengraph-image.png';
 
 interface Props {
   title?: string;
   tagline?: string;
   description?: string;
-  ogImage?: string;
+  openGraphImage?: string;
   ogType?: 'website' | 'article';
   is404?: boolean;
 }
@@ -14,13 +17,13 @@ const {
   title,
   tagline,
   description,
-  ogImage = '/opengraph-image.png',
+  openGraphImage = defaultOpenGraphImage.src,
   ogType = 'website',
   is404 = false,
 } = Astro.props;
 
 const canonicalURL = !is404 && new URL(Astro.url.pathname, Astro.site);
-const resolvedOgImage = new URL(ogImage, Astro.site);
+const resolvedOpenGraphImage = new URL(openGraphImage, Astro.site);
 ---
 
 {/* https://bugs.chromium.org/p/chromium/issues/detail?id=1378462 */}
@@ -44,15 +47,15 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
 
     <meta property="og:title" content={title ?? tagline} />
     <meta property="og:type" content={ogType} />
-    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image" content={resolvedOpenGraphImage} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content={SITE_TITLE} />
     <meta property="og:locale" content="ja_JP" />
 
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={faviconImage.src} type="image/svg+xml" />
   </head>
 
   <body class="min-h-[100svh] bg-white text-zinc-900">

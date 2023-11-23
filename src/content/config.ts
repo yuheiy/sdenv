@@ -11,12 +11,13 @@ const news = defineCollection({
 
 const work = defineCollection({
   // Type-check frontmatter using a schema
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    pubDate: z.date(),
-    heroImage: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.date(),
+      heroImage: image(),
+    }),
 });
 
 export const collections = { news, work };
