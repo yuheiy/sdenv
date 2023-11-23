@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_LANG, SITE_REGION, SITE_TITLE } from '../consts';
 import appleTouchIconImage from '../images/apple-touch-icon.png';
 import faviconImage from '../images/favicon.svg';
 import defaultOpenGraphImage from '../images/opengraph-image.png';
@@ -30,7 +30,7 @@ const resolvedOpenGraphImage = new URL(openGraphImage, Astro.site);
 {/* https://schepp.dev/posts/smooth-scrolling-and-page-search/ */}
 <html
   class="break-words underline-offset-[0.125em] kerning-none [line-break:normal] focus-within:motion-reduce:scroll-smooth"
-  lang="ja"
+  lang={SITE_LANG}
 >
   <head>
     <meta charset="UTF-8" />
@@ -51,7 +51,7 @@ const resolvedOpenGraphImage = new URL(openGraphImage, Astro.site);
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content={SITE_TITLE} />
-    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale" content={`${SITE_LANG}_${SITE_REGION}`} />
 
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
