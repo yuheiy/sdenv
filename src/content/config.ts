@@ -16,7 +16,7 @@ const work = defineCollection({
       title: z.string(),
       description: z.string(),
       pubDate: z.date(),
-      heroImage: image(),
+      cover: image(),
     }),
 });
 

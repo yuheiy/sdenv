@@ -19,14 +19,14 @@ const { Content } = await entry.render();
 <Layout
   title={entry.data.title}
   description={entry.data.description}
-  openGraphImage={entry.data.heroImage.src}
+  ogImage={entry.data.cover.src}
 >
   <main>
     <article>
       <div class="wrapper">
         <Hero as="header" title={entry.data.title} />
       </div>
-      <Image class="block h-96 w-full object-cover" src={entry.data.heroImage} alt="" />
+      <Image class="block h-96 w-full object-cover" src={entry.data.cover} alt="" />
       <div class="prose wrapper mt-12">
         <Content />
       </div>

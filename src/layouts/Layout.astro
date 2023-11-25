@@ -4,26 +4,34 @@ import appleTouchIconImage from '../images/apple-touch-icon.png';
 import faviconImage from '../images/favicon.svg';
 import defaultOpenGraphImage from '../images/opengraph-image.png';
 
-interface Props {
-  title?: string;
-  tagline?: string;
+interface SharedProps {
   description?: string;
-  openGraphImage?: string;
-  ogType?: 'website' | 'article';
-  is404?: boolean;
+  ogImage?: string;
 }
 
+type DefaultProps = SharedProps & {
+  title: string;
+  ogType?: 'website' | 'article';
+  is404?: boolean;
+};
+
+type HomeProps = SharedProps & {
+  tagline: string;
+  ogType?: 'website';
+  is404?: false;
+};
+
+type Props = DefaultProps | HomeProps;
+
 const {
-  title,
-  tagline,
   description,
-  openGraphImage = defaultOpenGraphImage.src,
   ogType = 'website',
+  ogImage = defaultOpenGraphImage.src,
   is404 = false,
 } = Astro.props;
 
 const canonicalURL = !is404 && new URL(Astro.url.pathname, Astro.site);
-const resolvedOpenGraphImage = new URL(openGraphImage, Astro.site);
+const resolvedOgImage = new URL(ogImage, Astro.site);
 ---
 
 {/* https://bugs.chromium.org/p/chromium/issues/detail?id=1378462 */}
@@ -36,18 +44,29 @@ const resolvedOpenGraphImage = new URL(openGraphImage, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title set:html={[title, SITE_TITLE, tagline].filter(Boolean).join(' &#8211; ')} />
+    <title
+      set:html={[
+        'title' in Astro.props && Astro.props.title,
+        SITE_TITLE,
+        'tagline' in Astro.props && Astro.props.tagline,
+      ]
+        .filter(Boolean)
+        .join(' &#8211; ')}
+    />
 
     <script src="../scripts/main.ts"></script>
 
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@_yuheiy" />
-    <meta name="twitter:title" content={title ?? SITE_TITLE} />
+    <meta name="twitter:title" content={'title' in Astro.props ? Astro.props.title : SITE_TITLE} />
 
-    <meta property="og:title" content={title ?? tagline} />
+    <meta
+      property="og:title"
+      content={'tagline' in Astro.props ? Astro.props.tagline : SITE_TITLE}
+    />
     <meta property="og:type" content={ogType} />
-    <meta property="og:image" content={resolvedOpenGraphImage} />
+    <meta property="og:image" content={resolvedOgImage} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content={SITE_TITLE} />
