@@ -3,7 +3,7 @@ import Alpine from 'alpinejs';
 
 const name = 'example';
 
-const data = {
+const store = {
   count: 0,
 
   init() {
@@ -16,10 +16,10 @@ const data = {
   },
 };
 
-Alpine.store(name, data);
+Alpine.store(name, store);
 
 declare module 'alpinejs' {
   interface Stores {
-    [name]: typeof data;
+    [name]: typeof store;
   }
 }
