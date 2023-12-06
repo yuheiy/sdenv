@@ -3,7 +3,7 @@ import { getViteConfig } from 'astro/config';
 
 export default getViteConfig({
   test: {
-    includeSource: ['src/**/*.{js,jsx,ts,tsx}'],
+    includeSource: ['src/**/*.{js,ts,jsx,tsx}'],
     environment: 'jsdom',
   },
 });
