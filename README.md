@@ -59,7 +59,7 @@ npm run lint:fix
 ├── src/                # メインのソースコード
 │   ├── components/     # Astroコンポーネント
 │   ├── content/        # Astroのコンテンツコレクション
-│   ├── images/         # ビルドによって加工される画像ファイル
+│   ├── assets/         # ビルドによって加工されるアセット
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
 │   ├── pages/          # ページと対応するAstroコンポーネント
 │   ├── scripts/        # クライアントサイドで利用されるスクリプト
