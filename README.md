@@ -57,9 +57,9 @@ npm run lint:fix
 ├── @types/             # 依存パッケージ用の型定義
 ├── public/             # ビルドによって加工されないアセット
 ├── src/                # メインのソースコード
+│   ├── assets/         # ビルドによって加工されるアセット
 │   ├── components/     # Astroコンポーネント
 │   ├── content/        # Astroのコンテンツコレクション
-│   ├── assets/         # ビルドによって加工されるアセット
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
 │   ├── pages/          # ページと対応するAstroコンポーネント
 │   ├── scripts/        # クライアントサイドで利用されるスクリプト
