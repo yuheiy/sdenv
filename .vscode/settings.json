@@ -1,7 +1,7 @@
 {
   /* Text Editor */
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on", // https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/33
@@ -9,7 +9,7 @@
   "editor.formatOnSave": true,
   /* Text Editor > Suggestions */
   "editor.quickSuggestions": {
-    "strings": true
+    "strings": "on"
   },
   /* Text Editor > Files */
   "files.associations": {
@@ -20,6 +20,7 @@
   /* Extensions > Emmet */
   "emmet.includeLanguages": {
     "astro": "html",
+    "mdx": "javascriptreact",
     "tailwindcss": "css"
   },
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
