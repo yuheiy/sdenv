@@ -14,15 +14,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-import-type-side-effects': 'error',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        varsIgnorePattern: '^_',
-        argsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_',
-        destructuredArrayIgnorePattern: '^_',
-      },
-    ],
+    // TypeScript already catches unused variables
+    '@typescript-eslint/no-unused-vars': 'off',
     'import/no-unresolved': [
       'error',
       {
@@ -39,6 +32,7 @@ module.exports = {
         },
       },
     ],
+    // use prettier-plugin-tailwindcss for class sorting
     'tailwindcss/classnames-order': 'off',
   },
   settings: {

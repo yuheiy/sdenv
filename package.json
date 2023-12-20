@@ -4,7 +4,7 @@
     "dev": "concurrently --raw \"npm:dev:*\"",
     "dev:astro": "astro dev",
     "dev:css": "chokidar \"src/styles/**/*.css\" --command \"touch tailwind.config.cjs\" --debounce 0 --silent",
-    "build": "astro check && tsc --noEmit && astro build",
+    "build": "astro check && tsc && astro build",
     "preview": "astro preview",
     "test": "vitest",
     "lint": "prettier . --check && eslint .",
