@@ -28,5 +28,9 @@
   /* Extensions > CSS Language Feature > TypeScript */
   "typescript.tsdk": "node_modules/typescript/lib",
   /* Extensions > ESLint */
-  "eslint.validate": ["javascript", "javascriptreact", "astro"]
+  "eslint.validate": ["javascript", "javascriptreact", "astro"],
+  /* Astro specific settings */
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
