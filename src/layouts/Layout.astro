@@ -2,7 +2,7 @@
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
-import { SITE_LANG, SITE_REGION, SITE_TITLE } from '../consts';
+import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
 
 interface SharedProps {
   description?: string;
@@ -58,7 +58,7 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
 
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@_yuheiy" />
+    <meta name="twitter:site" content={`@${SITE_TWITTER_ID}`} />
     <meta name="twitter:title" content={'title' in Astro.props ? Astro.props.title : SITE_TITLE} />
 
     <meta
