@@ -1,4 +1,3 @@
-/* eslint-env node */
 module.exports = {
   root: true,
   extends: [
@@ -44,6 +43,9 @@ module.exports = {
   overrides: [
     {
       files: ['*.cjs'],
+      env: {
+        node: true,
+      },
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
