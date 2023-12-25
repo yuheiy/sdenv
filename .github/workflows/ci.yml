@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Test
-        run: npm test
+        run: npm run test
 
   lint:
     name: Lint
