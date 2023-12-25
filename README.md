@@ -35,7 +35,7 @@ npm run build
 自動テスト:
 
 ```bash
-npm test
+npm run test
 ```
 
 ソースコードの静的検証:
@@ -44,10 +44,10 @@ npm test
 npm run lint
 ```
 
-ソースコードの静的検証および自動修正:
+ソースコードの自動修正:
 
 ```bash
-npm run lint:fix
+npm run fix
 ```
 
 ## ファイル構成
