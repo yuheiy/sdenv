@@ -48,7 +48,8 @@
     "vitest": "1.1.0"
   },
   "engines": {
-    "node": "20"
+    "node": "20",
+    "npm": "10"
   },
   "packageManager": "npm@10.2.4",
   "private": true
