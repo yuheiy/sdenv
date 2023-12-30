@@ -9,7 +9,7 @@ interface SharedProps {
   ogImage?: string;
 }
 
-type DefaultProps = SharedProps & {
+type GeneralProps = SharedProps & {
   title: string;
   ogType?: 'website' | 'article';
   is404?: boolean;
@@ -18,19 +18,15 @@ type DefaultProps = SharedProps & {
 type HomeProps = SharedProps & {
   tagline: string;
   ogType?: 'website';
-  is404?: false;
 };
 
-type Props = DefaultProps | HomeProps;
+type Props = GeneralProps | HomeProps;
 
-const {
-  description,
-  ogType = 'website',
-  ogImage = defaultOpenGraphImage.src,
-  is404 = false,
-} = Astro.props;
+const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } = Astro.props;
 
-const canonicalURL = !is404 && new URL(Astro.url.pathname, Astro.site);
+const is404 = 'is404' in Astro.props && Astro.props.is404;
+const canonicalURL = is404 ? null : new URL(Astro.url.pathname, Astro.site);
+
 const resolvedOgImage = new URL(ogImage, Astro.site);
 ---
 
