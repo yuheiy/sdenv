@@ -2,5 +2,5 @@
   box-sizing: content-box;
   margin-inline: auto;
   padding-inline: max(5vw, theme(spacing.4));
-  max-width: 60rem;
+  max-inline-size: 60rem;
 }

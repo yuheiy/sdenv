@@ -1,6 +1,6 @@
 .prose {
   > :where(* + *) {
-    margin-top: theme(spacing.4);
+    margin-block-start: theme(spacing.4);
   }
 
   :where(h2) {
@@ -14,23 +14,23 @@
   }
 
   :where(* + :is(h2, h3)) {
-    margin-top: theme(spacing.6);
+    margin-block-start: theme(spacing.6);
   }
 
   :where(ol, ul) {
-    padding-left: theme(spacing.8);
+    padding-inline-start: theme(spacing.8);
     list-style: revert;
   }
 
   :where(blockquote) {
-    margin-left: theme(spacing.8);
+    margin-inline-start: theme(spacing.8);
   }
 
   :where(blockquote + figcaption) {
-    margin-left: theme(spacing.8);
+    margin-inline-start: theme(spacing.8);
   }
 
   :where(figure > * + *) {
-    margin-top: theme(spacing.2);
+    margin-block-start: theme(spacing.2);
   }
 }
