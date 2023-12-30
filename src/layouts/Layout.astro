@@ -30,8 +30,10 @@ const canonicalURL = is404 ? null : new URL(Astro.url.pathname, Astro.site);
 const resolvedOgImage = new URL(ogImage, Astro.site);
 ---
 
-{/* https://bugs.chromium.org/p/chromium/issues/detail?id=1378462 */}
-{/* https://schepp.dev/posts/smooth-scrolling-and-page-search/ */}
+<!--
+  https://bugs.chromium.org/p/chromium/issues/detail?id=1378462
+  https://schepp.dev/posts/smooth-scrolling-and-page-search/
+-->
 <html
   class="break-words underline-offset-[0.125em] kerning-none [line-break:normal] focus-within:motion-reduce:scroll-smooth"
   lang={SITE_LANG}
