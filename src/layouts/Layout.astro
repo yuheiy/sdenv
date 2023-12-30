@@ -5,19 +5,18 @@ import defaultOpenGraphImage from '../assets/opengraph-image.png';
 import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
 
 interface SharedProps {
-  description?: string;
-  ogImage?: string;
+  description?: string | undefined;
+  ogType?: 'website' | 'article' | undefined;
+  ogImage?: string | undefined;
 }
 
 type GeneralProps = SharedProps & {
   title: string;
-  ogType?: 'website' | 'article';
-  is404?: boolean;
+  is404?: boolean | undefined;
 };
 
 type HomeProps = SharedProps & {
   tagline: string;
-  ogType?: 'website';
 };
 
 type Props = GeneralProps | HomeProps;
