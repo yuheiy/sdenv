@@ -6,7 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/stylistic',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:astro/recommended',
+    'plugin:astro/jsx-a11y-recommended',
     'plugin:tailwindcss/recommended',
     'prettier', // make sure to put this line last
   ],
