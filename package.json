@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently --raw \"npm:dev:*\"",
-    "dev:astro": "astro dev",
+    "dev:astro": "astro dev --host",
     "dev:css": "chokidar \"src/styles/**/*.css\" --command \"touch tailwind.config.cjs\" --debounce 0 --silent",
     "build": "astro check && tsc && astro build",
     "preview": "astro preview",
