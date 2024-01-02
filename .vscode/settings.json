@@ -3,34 +3,45 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
+  // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.wordWrap": "on", // https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/33
+  // https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/33#issuecomment-1025156688
+  "editor.wordWrap": "on",
+
   /* Text Editor > Formatting */
   "editor.formatOnSave": true,
+
   /* Text Editor > Suggestions */
   "editor.quickSuggestions": {
+    // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#editor.quicksuggestions
     "strings": "on"
   },
+
   /* Text Editor > Files */
   "files.associations": {
+    // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#files.associations
     "*.css": "tailwindcss"
   },
-  /* Extensions > CSS Language Feature > CSS */
-  "css.validate": false,
+
   /* Extensions > Emmet */
   "emmet.includeLanguages": {
     "astro": "html",
     "mdx": "javascriptreact",
     "tailwindcss": "css"
   },
+  // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#tailwindcss.classattributes
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
+  // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#tailwindcss.emmetcompletions
   "tailwindCSS.emmetCompletions": true,
+
   /* Extensions > CSS Language Feature > TypeScript */
   "typescript.tsdk": "node_modules/typescript/lib",
+
   /* Extensions > ESLint */
-  "eslint.validate": ["javascript", "javascriptreact", "astro"],
-  /* Astro specific settings */
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  // https://github.com/ota-meshi/eslint-plugin-astro?tab=readme-ov-file#visual-studio-code
+  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+
+  /* Extensions > Prettier */
+  // https://github.com/prettier/prettier-vscode?tab=readme-ov-file#prettierdocumentselectors
+  "prettier.documentSelectors": ["**/*.astro"]
 }
