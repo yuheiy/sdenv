@@ -1,21 +1,20 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { HTMLAttributes } from 'astro/types';
 
-type Props<Tag extends HTMLTag> = Polymorphic<{
-  as: Tag;
+type Props = HTMLAttributes<'header'> & {
   title: string;
   description?: string | undefined;
-}>;
+};
 
-const { as: Tag = 'div', class: className, title, description, ...props } = Astro.props;
+const { class: className, title, description, ...props } = Astro.props;
 ---
 
-<Tag x-data="hero" {...props} class:list={['my-12', className]}>
+<header x-data="hero" {...props} class:list={['wrapper my-12', className]}>
   <h1 class="text-4xl font-bold kerning-all">
     {title}
   </h1>
   {description && <p class="mt-8 text-xl">{description}</p>}
-</Tag>
+</header>
 
 <script>
   // eslint-disable-next-line import/no-named-as-default

@@ -81,8 +81,8 @@ if (!is404) {
   </head>
 
   <body class="min-h-svh bg-white text-zinc-900">
-    <header class="sticky top-0 z-10 bg-zinc-900 text-zinc-100/80" x-data="{ isMenuOpen: false }">
-      <nav class="wrapper flex items-center gap-x-6">
+    <nav class="sticky top-0 z-10 bg-zinc-900 text-zinc-100/80" x-data="{ isMenuOpen: false }">
+      <div class="wrapper flex items-center gap-x-6">
         <a
           class="mr-auto py-2 text-xl font-bold transition [&:any-link]:hover:text-zinc-100"
           href={Astro.url.pathname !== '/' ? '/' : null}
@@ -105,7 +105,7 @@ if (!is404) {
             </a>
           ))
         }
-      </nav>
+      </div>
       <div x-dialog x-model="isMenuOpen" style="display: none;">
         <template x-teleport="#js-overlay-container">
           <div class="fixed inset-0 bg-black/80" x-dialog:overlay x-transition.opacity></div>
@@ -132,7 +132,7 @@ if (!is404) {
           </ul>
         </div>
       </div>
-    </header>
+    </nav>
 
     <slot />
 

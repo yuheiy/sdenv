@@ -13,9 +13,9 @@ const newsEntries = (await getCollection('news')).toSorted(
 ---
 
 <Layout isHome tagline={title} description={description}>
-  <main class="wrapper">
-    <Hero title={title} description={description} />
+  <Hero title={title} description={description} />
 
+  <main class="wrapper">
     <section>
       <ul class="auto-grid-80 mt-4 gap-x-8 gap-y-12">
         {
