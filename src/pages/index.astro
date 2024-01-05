@@ -12,7 +12,7 @@ const newsEntries = (await getCollection('news')).toSorted(
 );
 ---
 
-<Layout tagline={title} description={description}>
+<Layout isHome tagline={title} description={description}>
   <main class="wrapper">
     <Hero title={title} description={description} />
 
