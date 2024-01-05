@@ -83,9 +83,11 @@ if (!is404) {
   <body class="min-h-svh bg-white text-zinc-900">
     <nav class="sticky top-0 z-10 bg-zinc-900 text-zinc-100/80" x-data="{ isMenuOpen: false }">
       <div class="wrapper flex items-center gap-x-6">
+        {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
         <a
           class="mr-auto py-2 text-xl font-bold transition [&:any-link]:hover:text-zinc-100"
-          href={Astro.url.pathname !== '/' ? '/' : null}
+          href={isHome ? null : '/'}
+          title={isHome ? null : 'ホームに戻る'}
         >
           {SITE_TITLE}
         </a>
