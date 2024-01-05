@@ -21,9 +21,11 @@ const { Content } = await entry.render();
   description={entry.data.description}
   ogImage={entry.data.cover.src}
 >
-  <Hero title={entry.data.title} />
-
   <main>
+    <div class="wrapper">
+      <Hero title={entry.data.title} />
+    </div>
+
     <Image class="block h-96 w-full object-cover" src={entry.data.cover} alt="" />
 
     <div class="prose wrapper mt-12">

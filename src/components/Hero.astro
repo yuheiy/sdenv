@@ -9,12 +9,12 @@ type Props = HTMLAttributes<'header'> & {
 const { class: className, title, description, ...props } = Astro.props;
 ---
 
-<header x-data="hero" {...props} class:list={['wrapper my-12', className]}>
+<div x-data="hero" {...props} class:list={['my-12', className]}>
   <h1 class="text-4xl font-bold kerning-all">
     {title}
   </h1>
   {description && <p class="mt-8 text-xl">{description}</p>}
-</header>
+</div>
 
 <script>
   // eslint-disable-next-line import/no-named-as-default
