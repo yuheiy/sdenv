@@ -9,7 +9,7 @@
     "test": "vitest",
     "lint": "concurrently --raw \"npm:lint:*\"",
     "lint:prettier": "prettier . --check",
-    "lint:eslint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:eslint": "eslint . --max-warnings 0",
     "fix": "npm run fix:prettier && npm run fix:eslint",
     "fix:prettier": "npm run lint:prettier -- --write",
     "fix:eslint": "npm run lint:eslint -- --fix"

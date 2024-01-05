@@ -34,6 +34,7 @@ module.exports = {
     // use prettier-plugin-tailwindcss for class sorting
     'tailwindcss/classnames-order': 'off',
   },
+  reportUnusedDisableDirectives: true,
   settings: {
     'import/resolver': {
       typescript: true,
