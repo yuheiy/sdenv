@@ -3,8 +3,6 @@ import focus from '@alpinejs/focus';
 import ui from '@alpinejs/ui';
 // eslint-disable-next-line import/no-named-as-default
 import Alpine from 'alpinejs';
-import { loadComponents } from './components';
-import { loadStores } from './stores';
 
 (async () => {
   // https://vitejs.dev/guide/env-and-mode.html#env-variables
@@ -21,9 +19,14 @@ import { loadStores } from './stores';
   Alpine.plugin(focus);
   Alpine.plugin(ui);
 
-  await Promise.all([loadComponents(), loadStores()]);
+  await loadAlpineModules();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).Alpine = Alpine;
   Alpine.start();
 })();
+
+async function loadAlpineModules() {
+  // enable code splitting
+  await import('./alpinejs');
+}
