@@ -2,6 +2,7 @@
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
+import PageHeader from '../components/PageHeader.astro';
 import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
 
 interface SharedProps {
@@ -26,13 +27,10 @@ type NotFoundProps = Omit<SharedProps, 'is404'> & {
 
 type Props = GeneralProps | HomeProps | NotFoundProps;
 
-const {
-  isHome,
-  is404,
-  description,
-  ogType = 'website',
-  ogImage = defaultOpenGraphImage.src,
-} = Astro.props;
+const isHome = Astro.props.isHome === true;
+const is404 = Astro.props.is404 === true;
+
+const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } = Astro.props;
 
 const resolvedOgImage = new URL(ogImage, Astro.site);
 
@@ -81,60 +79,7 @@ if (!is404) {
   </head>
 
   <body class="min-h-svh bg-white text-zinc-900">
-    <header class="sticky top-0 z-10 bg-zinc-900 text-zinc-100/80" x-data="{ isMenuOpen: false }">
-      <nav class="wrapper flex items-center gap-x-6">
-        {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
-        <a
-          class="mr-auto py-2 text-xl font-bold transition [&:any-link]:hover:text-zinc-100"
-          href={isHome ? null : '/'}
-          title={isHome ? null : 'ホームに戻る'}
-        >
-          {SITE_TITLE}
-        </a>
-        <button
-          class="py-2 text-sm transition hover:text-zinc-100 sm:hidden"
-          type="button"
-          @click="isMenuOpen = true">メニュー</button
-        >
-        {
-          [
-            ['はじめに', '/about/'],
-            ['お知らせ', '/news/'],
-            ['実績', '/work/'],
-          ].map(([label, href]) => (
-            <a class="hidden py-2 text-sm transition hover:text-zinc-100 sm:inline" href={href}>
-              {label}
-            </a>
-          ))
-        }
-      </nav>
-      <div x-dialog x-model="isMenuOpen" style="display: none;">
-        <template x-teleport="#js-overlay-container">
-          <div class="fixed inset-0 bg-black/80" x-dialog:overlay x-transition.opacity></div>
-        </template>
-        <div
-          class="absolute inset-x-0 top-full border-t border-zinc-800 bg-zinc-900 sm:hidden"
-          x-dialog:panel
-          x-collapse
-        >
-          <ul class="wrapper divide-y divide-zinc-800">
-            {
-              [
-                ['はじめに', '/about/'],
-                ['お知らせ', '/news/'],
-                ['実績', '/work/'],
-              ].map(([label, href]) => (
-                <li>
-                  <a class="block py-3 text-sm transition hover:text-zinc-100" href={href}>
-                    {label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-    </header>
+    <PageHeader isHome={isHome} />
 
     <slot />
 
