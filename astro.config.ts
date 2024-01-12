@@ -7,7 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap(), tailwind({ nesting: true })],
   vite: {
     define: {
       'import.meta.vitest': 'undefined',
