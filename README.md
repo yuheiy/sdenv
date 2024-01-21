@@ -18,7 +18,7 @@ sdenvは、これらの使い方を理解していることを前提に構成さ
 
 加えて、これらのツールを快適に使用できるように、[ESLint](https://eslint.org/)、[Prettier](https://prettier.io/)、[VSCode](https://code.visualstudio.com/)の設定が組み込まれています。
 
-## CLI
+## コマンドラインインターフェース
 
 依存パッケージのインストール:
 
