@@ -1,5 +1,10 @@
 module.exports = {
   root: true,
+  env: {
+    browser: true,
+    node: true,
+    es2020: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -44,9 +49,6 @@ module.exports = {
   overrides: [
     {
       files: ['*.cjs'],
-      env: {
-        node: true,
-      },
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
