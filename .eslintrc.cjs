@@ -53,7 +53,9 @@ module.exports = {
   overrides: [
     {
       files: ['*.astro'],
-      extends: ['plugin:@typescript-eslint/disable-type-checked'],
+      rules: {
+        '@typescript-eslint/no-unsafe-return': 'off',
+      },
     },
   ],
 };
