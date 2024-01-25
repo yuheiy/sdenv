@@ -7,9 +7,11 @@ export async function getStaticPaths() {
   const newsEntries = await getCollection('news');
   return newsEntries.map((entry) => ({
     params: { slug: entry.slug },
-    props: { entry: entry },
+    props: { entry },
   }));
 }
+
+type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props'];
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();

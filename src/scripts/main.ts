@@ -4,7 +4,7 @@ import ui from '@alpinejs/ui';
 // eslint-disable-next-line import/no-named-as-default
 import Alpine from 'alpinejs';
 
-(async () => {
+void (async () => {
   // https://vitejs.dev/guide/env-and-mode.html#env-variables
   if (import.meta.env.DEV) {
     console.log({
@@ -21,7 +21,7 @@ import Alpine from 'alpinejs';
 
   await loadAlpineModules();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
   (window as any).Alpine = Alpine;
   Alpine.start();
 })();
