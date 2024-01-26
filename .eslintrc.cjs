@@ -22,14 +22,17 @@ module.exports = {
   rules: {
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-import-type-side-effects': 'error',
+
     // TypeScript already catches unused variables
     '@typescript-eslint/no-unused-vars': 'off',
+
     'import/no-unresolved': [
       'error',
       {
         ignore: ['^astro:.+'],
       },
     ],
+
     'import/order': [
       'error',
       {
@@ -40,6 +43,7 @@ module.exports = {
         },
       },
     ],
+
     // use prettier-plugin-tailwindcss for class sorting
     'tailwindcss/classnames-order': 'off',
   },
