@@ -2,21 +2,24 @@
 
 sdenv（読み方: えすでぃーえんぶ）は、ウェブサイト（not ウェブアプリケーション）開発のためのフロントエンドスターターキットです。モダンなプラクティスを取り入れながらも、より多くのウェブサイト開発者に向けて、HTML中心の開発環境を構成しています。
 
+> [!NOTE]
+> 「ウェブサイト v.s. ウェブアプリケーション」の二分法には反論があります。「[The Website vs. Web App Dichotomy Doesn't Exist](https://jakelazaroff.com/words/the-website-vs-web-app-dichotomy-doesnt-exist/)」では、ウェブサイトを分類するための観点に加えて、開発技術の適用範囲についても言及されています。
+
 次のツールを採用しています:
 
 - [Astro](https://astro.build/): ウェブサイト構築のためのフレームワーク
 - [Tailwind CSS](https://tailwindcss.com/): ユーティリティファーストCSSフレームワーク
 - [Alpine.js](https://alpinejs.dev/): HTMLに直接振る舞いを記述できるようにするJavaScriptフレームワーク
 
-sdenvは、これらの使い方を理解していることを前提に構成されています。理解が不十分な点があれば、それぞれの公式ドキュメントなどを参照してください。
+加えて、これらを快適に使用できるように、[ESLint](https://eslint.org/)、[Prettier](https://prettier.io/)、[VSCode](https://code.visualstudio.com/)の設定が組み込まれています。
 
-またそれ以外にも、次のようなコンセプトに関係しています:
+sdenvは、これらのツールの使い方を理解していることを前提に構成されています。理解が不十分な点があれば、それぞれの公式ドキュメントなどを参照してください。
+
+またsdenvのアプローチは、次のようなコンセプトにも関係しています:
 
 - [HTML First](https://html-first.com/): HTML中心のシームレスな開発プロセスを実現するためのガイドライン
 - [htmx](https://htmx.org/): サーバーとのインタラクションをHTML属性として記述できるようにするライブラリ
 - [The AHA Stack](https://ahastack.dev/): Astro、htmx、Alpine.jsを組み合わせてウェブアプリケーションを構築するためのガイド
-
-加えて、これらのツールを快適に使用できるように、[ESLint](https://eslint.org/)、[Prettier](https://prettier.io/)、[VSCode](https://code.visualstudio.com/)の設定が組み込まれています。
 
 ## コマンドラインインターフェース
 
