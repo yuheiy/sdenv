@@ -1,7 +1,6 @@
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import ui from '@alpinejs/ui';
-// eslint-disable-next-line import/no-named-as-default
 import Alpine from 'alpinejs';
 
 void (async () => {

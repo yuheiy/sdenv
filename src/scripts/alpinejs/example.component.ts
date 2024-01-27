@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-named-as-default
 import Alpine from 'alpinejs';
 import invariant from 'tiny-invariant';
 
