@@ -3,7 +3,12 @@ import focus from '@alpinejs/focus';
 import ui from '@alpinejs/ui';
 import Alpine from 'alpinejs';
 
-void (async () => {
+async function loadAlpineModules() {
+  // enable code splitting
+  await import('./alpinejs');
+}
+
+async function main() {
   // https://vitejs.dev/guide/env-and-mode.html#env-variables
   if (import.meta.env.DEV) {
     console.log({
@@ -23,9 +28,8 @@ void (async () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
   (window as any).Alpine = Alpine;
   Alpine.start();
-})();
-
-async function loadAlpineModules() {
-  // enable code splitting
-  await import('./alpinejs');
 }
+
+main().catch((e) => {
+  throw e;
+});
