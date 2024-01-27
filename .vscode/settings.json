@@ -3,7 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+  // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode#default-formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/33#issuecomment-1025156688
   "editor.wordWrap": "on",
@@ -29,12 +29,14 @@
     "mdx": "javascriptreact",
     "tailwindcss": "css"
   },
+
+  /* Extensions > Tailwind CSS IntelliSense */
   // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#tailwindcss.classattributes
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
   // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#tailwindcss.emmetcompletions
   "tailwindCSS.emmetCompletions": true,
 
-  /* Extensions > CSS Language Feature > TypeScript */
+  /* Extensions > TypeScript */
   "typescript.tsdk": "node_modules/typescript/lib",
 
   /* Extensions > ESLint */
@@ -42,6 +44,6 @@
   "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
 
   /* Extensions > Prettier */
-  // https://github.com/prettier/prettier-vscode?tab=readme-ov-file#prettierdocumentselectors
+  // https://gist.github.com/JLarky/b26a165d628984723fe285201ca699e5
   "prettier.documentSelectors": ["**/*.astro"]
 }
