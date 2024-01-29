@@ -78,6 +78,10 @@ if (!is404) {
     <link rel="icon" href={faviconImage.src} type="image/svg+xml" />
   </head>
 
+  <!--
+    use `100svh` instead of `100dvh`
+    https://piccalil.li/blog/a-more-modern-css-reset/#:~:text=I%20like%20a,to%20change%20it!
+  -->
   <body class="min-h-svh bg-white text-zinc-900">
     <PageHeader isHome={isHome} />
 
