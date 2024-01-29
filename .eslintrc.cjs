@@ -20,6 +20,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
+    '@typescript-eslint/consistent-type-exports': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-import-type-side-effects': 'error',
 
