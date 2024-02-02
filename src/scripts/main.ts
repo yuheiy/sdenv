@@ -30,6 +30,4 @@ async function main() {
   Alpine.start();
 }
 
-main().catch((e) => {
-  throw e;
-});
+void main();
