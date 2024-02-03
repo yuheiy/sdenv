@@ -7,9 +7,9 @@ const title = 'ウェブサイト構築のためのモダンなフロントエ�
 const description =
   'sdenvは、ウェブアプリケーションではなくウェブサイトを開発するためのベストプラクティスに基づいて構成されたフロントエンド開発環境です。やりすぎないちょうどいい使い勝手の実現を念頭に置いて設計されている、より多くのウェブサイト開発者のためのツールキットです。';
 
-const newsEntries = (await getCollection('news')).toSorted(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const newsEntries = (await getCollection('news'))
+  .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .toReversed();
 ---
 
 <Layout isHome tagline={title} description={description}>

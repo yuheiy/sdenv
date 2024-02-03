@@ -6,9 +6,9 @@ import Layout from '../../layouts/Layout.astro';
 const title = 'お知らせ';
 const description = '';
 
-const newsEntries = (await getCollection('news')).toSorted(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const newsEntries = (await getCollection('news'))
+  .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .toReversed();
 ---
 
 <Layout title={title} description={description}>
