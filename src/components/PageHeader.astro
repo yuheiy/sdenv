@@ -35,7 +35,7 @@ const { isHome } = Astro.props;
       ))
     }
   </nav>
-  <div x-dialog x-model="isOpen" style="display: none;">
+  <div x-dialog x-model="isOpen" x-cloak>
     <template x-teleport="#js-overlay-container">
       <div class="fixed inset-0 bg-black/80" x-dialog:overlay x-transition.opacity></div>
     </template>
