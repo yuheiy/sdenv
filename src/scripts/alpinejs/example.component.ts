@@ -1,9 +1,9 @@
 import Alpine from 'alpinejs';
-import { invariant } from 'outvariant';
+import { invariant } from 'ts-invariant';
 
 Alpine.data('example', (initialValue = 0) => {
   // ensure that `initialValue` is of type number
-  invariant(typeof initialValue === 'number', 'Invariant failed');
+  invariant(typeof initialValue === 'number');
   // then `initialValue` is inferred as a Number value
 
   /**
