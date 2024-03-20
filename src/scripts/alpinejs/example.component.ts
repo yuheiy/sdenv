@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs';
-import { invariant } from 'ts-invariant';
+import invariant from 'tiny-invariant';
 
 Alpine.data('example', (initialValue = 0) => {
   // ensure that `initialValue` is of type number
