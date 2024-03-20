@@ -1,6 +1,7 @@
 {
   /* Text Editor */
   "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
     "source.fixAll": "explicit"
   },
   // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode#default-formatter
