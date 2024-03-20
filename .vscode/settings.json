@@ -42,6 +42,7 @@
   /* Extensions > ESLint */
   // https://github.com/ota-meshi/eslint-plugin-astro?tab=readme-ov-file#visual-studio-code
   "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+  "eslint.experimental.useFlatConfig": true,
 
   /* Extensions > Prettier */
   // https://gist.github.com/JLarky/b26a165d628984723fe285201ca699e5
