@@ -25,9 +25,8 @@ async function main() {
 
   await loadAlpineModules();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
   (window as any).Alpine = Alpine;
   Alpine.start();
 }
 
-void main();
+main();
