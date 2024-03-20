@@ -4,6 +4,9 @@ import eslintPluginAstro from 'eslint-plugin-astro';
 const compat = new FlatCompat();
 
 export default [
+  {
+    ignores: ['dist/**'],
+  },
   ...eslintPluginAstro.configs['flat/jsx-a11y-recommended'],
   ...compat.extends('plugin:tailwindcss/recommended'),
   {
