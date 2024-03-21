@@ -69,7 +69,7 @@ npm run fix
 │   ├── assets/         # ビルドによって加工されるアセット
 │   ├── components/     # Astroコンポーネント
 │   ├── content/        # Astroのコンテンツコレクション
-│   ├── icons/          # astro-iconから参照できるSVGファイル
+│   ├── icons/          # astro-iconから参照されるSVGファイル
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
 │   ├── pages/          # ページと対応するAstroコンポーネント
 │   ├── scripts/        # クライアントサイドで利用されるスクリプト
