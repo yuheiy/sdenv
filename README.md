@@ -64,17 +64,18 @@ npm run fix
 ```
 .
 ├── public/             # ビルドによって加工されないアセット
-├── src/                # メインのソースコード
+├── src/                # サイトのソースコード
 │   ├── assets/         # ビルドによって加工されるアセット
 │   ├── components/     # Astroコンポーネント
 │   ├── content/        # Astroのコンテンツコレクション
 │   ├── icons/          # astro-iconから参照されるSVGファイル
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
-│   ├── pages/          # ページと対応するAstroコンポーネント
+│   ├── pages/          # ページのためのAstroコンポーネント
 │   ├── scripts/        # クライアントサイドで利用されるスクリプト
-│   └── styles/         # Tailwind CSSで読み込まれるCSSファイル
+│   └── styles/         # Tailwind CSSによって読み込まれるCSSファイル
 ├── astro.config.ts     # Astroの設定
 ├── package.json        # 依存パッケージを管理するための設定
+├── postcss.config.cjs  # PostCSSの設定
 ├── tailwind.config.cjs # Tailwind CSSの設定
 └── tsconfig.json       # TypeScriptの設定
 ```
