@@ -7,7 +7,7 @@ export default [
     ignores: ['dist/'],
   },
 
-  // global configuration
+  // global configurations
   {
     linterOptions: {
       reportUnusedDisableDirectives: 'error',
