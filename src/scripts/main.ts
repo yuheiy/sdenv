@@ -1,6 +1,3 @@
-import collapse from '@alpinejs/collapse';
-import focus from '@alpinejs/focus';
-import ui from '@alpinejs/ui';
 import Alpine from 'alpinejs';
 
 async function loadAlpineModules() {
@@ -18,10 +15,6 @@ async function main() {
       DEV: import.meta.env.DEV,
     });
   }
-
-  Alpine.plugin(collapse);
-  Alpine.plugin(focus);
-  Alpine.plugin(ui);
 
   await loadAlpineModules();
 

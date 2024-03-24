@@ -1,27 +1,19 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-
-type Props = HTMLAttributes<'header'> & {
+interface Props {
   title: string;
-  description?: string | undefined;
-};
+  meta?: string | undefined;
+}
 
-const { class: className, title, description, ...props } = Astro.props;
+const { title, meta } = Astro.props;
 ---
 
-<div x-data="hero" {...props} class:list={['my-12', className]}>
-  <h1 class="text-4xl font-bold kerning-all">
+<header class="wrapper pt-[fluid-sizing(3rem,5rem)]">
+  {meta && <p class="mb-3 text-sm" set:html={meta} />}
+  <h1
+    class="text-pretty text-[length:fluid-sizing(2rem,3rem)] font-bold leading-normal kerning-all [word-break:auto-phrase]"
+  >
     {title}
   </h1>
-  {description && <p class="mt-8 text-xl">{description}</p>}
-</div>
+</header>
 
-<script>
-  import Alpine from 'alpinejs';
-
-  Alpine.data('hero', () => ({
-    init() {
-      console.log('hero component: init');
-    },
-  }));
-</script>
+<div class="my-[fluid-sizing(3rem,5rem)] border-t border-slate-200"></div>

@@ -1,52 +1,78 @@
 ---
-import { getCollection } from 'astro:content';
-import Hero from '../components/Hero.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import logoAlpinejsImage from '../assets/home/logo-alpinejs.svg';
+import logoAstroImage from '../assets/home/logo-astro.svg';
+import logoTailwindcssImage from '../assets/home/logo-tailwindcss.svg';
+import { SITE_TITLE } from '../consts';
 import Layout from '../layouts/Layout.astro';
 
-const title = 'ウェブサイト構築のためのモダンなフロントエンド開発環境';
+const tagline = 'ウェブサイトのためのフロントエンド開発スターターキット';
 const description =
-  'sdenvは、ウェブアプリケーションではなくウェブサイトを開発するためのベストプラクティスに基づいて構成されたフロントエンド開発環境です。やりすぎないちょうどいい使い勝手の実現を念頭に置いて設計されている、より多くのウェブサイト開発者のためのツールキットです。';
-
-const newsEntries = (await getCollection('news'))
-  .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
-  .toReversed();
+  'sdenv（読み方: えすでぃーえんぶ）は、ウェブサイト（not ウェブアプリケーション）のためのフロントエンド開発スターターキットです。モダンなプラクティスを取り入れながらも、より多くのウェブサイト開発者に向けて、HTML中心の開発環境を構成しています。';
 ---
 
-<Layout isHome tagline={title} description={description}>
-  <main class="wrapper">
-    <Hero title={title} description={description} />
+<Layout isHome tagline={tagline} description={description}>
+  <header class="wrapper py-[fluid-sizing(4rem,10rem)]">
+    <h1>
+      <Icon
+        class="mx-auto h-[fluid-sizing(2.5rem,6rem)] w-auto text-[#111111]"
+        name="logo"
+        role="img"
+        aria-label={SITE_TITLE}
+      />
+    </h1>
+    <p
+      class="mt-[fluid-sizing(2rem,2.5rem)] text-center font-bold text-[fluid-sizing(1rem,1.5rem)] kerning-all [word-break:auto-phrase]"
+    >
+      {tagline}
+    </p>
+  </header>
 
-    <section>
-      <ul class="auto-grid-80 mt-4 gap-x-8 gap-y-12">
-        {
-          ['Astro', 'Tailwind CSS', 'Alpine.js', 'Prettier / ESLint'].map((label) => (
-            <li>
-              <div class="aspect-video rounded-3xl bg-zinc-200" />
-              <p class="mt-3 text-center">{label}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="mt-16 text-2xl font-bold">お知らせ</h2>
-      <ol class="mt-6 list-disc space-y-1 ps-8">
-        {
-          newsEntries.map((entry) => (
-            <li>
-              <a
-                class="text-sky-600 hover:text-sky-800 hover:underline"
-                href={`/news/${entry.slug}/`}
-              >
-                {entry.data.title}
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-    </section>
-
-    <div x-data="example(100)"></div>
+  <main class="wrapper mb-[fluid-sizing(4rem,10rem)] max-w-[90rem]">
+    <div class="flex flex-col items-center gap-x-4 lg:flex-row" role="list">
+      {
+        [
+          {
+            image: {
+              src: logoAstroImage,
+              alt: 'Astro',
+            },
+            link: 'https://astro.build/',
+            label: 'Webサイトフレームワーク',
+          },
+          {
+            image: {
+              src: logoTailwindcssImage,
+              alt: 'Tailwind CSS',
+            },
+            link: 'https://tailwindcss.com/',
+            label: 'CSSフレームワーク',
+          },
+          {
+            image: {
+              src: logoAlpinejsImage,
+              alt: 'Alpine.js',
+            },
+            link: 'https://alpinejs.dev/',
+            label: 'JavaScriptフレームワーク',
+          },
+        ].map(({ image, link, label }, i) => (
+          <>
+            {i > 0 && <div class="mb-5 text-7xl font-bold text-slate-200">×</div>}
+            <div class="w-full rounded-xl border border-slate-300" role="listitem">
+              <p>
+                <a href={link} target="_blank">
+                  <Image class="w-full rounded-t-xl" {...image} />
+                </a>
+              </p>
+              <p class="rounded-b-xl border-t border-slate-300 bg-slate-50 px-4 py-2 text-center font-bold kerning-normal">
+                {label}
+              </p>
+            </div>
+          </>
+        ))
+      }
+    </div>
   </main>
 </Layout>

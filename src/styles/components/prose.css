@@ -1,36 +1,7 @@
 .prose {
+  line-height: 1.7;
+
   > :where(* + *) {
-    margin-block-start: theme(spacing.4);
-  }
-
-  :where(h2) {
-    font-weight: theme(fontWeight.bold);
-    font-size: theme(fontSize.2xl);
-  }
-
-  :where(h3) {
-    font-weight: theme(fontWeight.bold);
-    font-size: theme(fontSize.lg);
-  }
-
-  :where(* + :is(h2, h3)) {
-    margin-block-start: theme(spacing.6);
-  }
-
-  :where(ol, ul) {
-    padding-inline-start: theme(spacing.8);
-    list-style: revert;
-  }
-
-  :where(blockquote) {
-    margin-inline-start: theme(spacing.8);
-  }
-
-  :where(blockquote + figcaption) {
-    margin-inline-start: theme(spacing.8);
-  }
-
-  :where(figure > * + *) {
-    margin-block-start: theme(spacing.2);
+    margin-top: theme(spacing.4);
   }
 }

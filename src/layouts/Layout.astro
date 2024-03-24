@@ -1,8 +1,8 @@
 ---
+import { Icon } from 'astro-icon/components';
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
-import PageHeader from '../components/PageHeader.astro';
 import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
 
 interface SharedProps {
@@ -49,8 +49,12 @@ if (!is404) {
   lang={SITE_LANG}
 >
   <head>
-    {/* sort the order of elements in the `<head>` to improve performance */}
-    {/* https://speakerdeck.com/csswizardry/get-your-head-straight?slide=39 */}
+    {
+      /**
+       * sort the order of elements in the `<head>` to improve performance
+       * https://speakerdeck.com/csswizardry/get-your-head-straight?slide=39
+       */
+    }
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -81,32 +85,43 @@ if (!is404) {
     <link rel="icon" href={faviconImage.src} type="image/svg+xml" />
   </head>
 
-  <body class="min-h-svh bg-white text-zinc-900">
-    {/* use `100svh` instead of `100dvh` */}
-    {/* https://piccalil.li/blog/a-more-modern-css-reset/#:~:text=I%20like%20a,to%20change%20it! */}
+  <body class="min-h-svh bg-white text-slate-800">
+    {
+      /**
+       * use `100svh` instead of `100dvh`
+       * https://piccalil.li/blog/a-more-modern-css-reset/#:~:text=I%20like%20a,to%20change%20it!
+       */
+    }
 
-    <PageHeader isHome={isHome} />
+    <nav
+      class="sticky top-0 z-10 bg-[#111] text-[length:fluid-sizing(375px_0.875rem,sm_1rem)] font-bold text-white"
+    >
+      <ul class="wrapper flex max-w-none items-center gap-x-[fluid-sizing(375px_1rem,sm_1.5rem)]">
+        <li class="mr-auto">
+          {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
+          <a class="block py-4" href={isHome ? null : '/'}>
+            <Icon class="h-5 w-auto" name="logo" role="img" title={SITE_TITLE} />
+          </a>
+        </li>
+        <li>
+          <a class="block py-2" href="/blog">ブログ</a>
+        </li>
+        <li>
+          <a class="block py-2" href="https://github.com/yuheiy/sdenv" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <a class="block py-2" href={`https://twitter.com/${SITE_TWITTER_ID}`} target="_blank">Twitter</a>
+        </li>
+      </ul>
+    </nav>
 
     <slot />
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer class="sticky top-full mt-12 bg-zinc-900 py-2 text-zinc-100/80">
-      <div class="wrapper">
-        <p class="flex flex-wrap justify-center gap-x-6">
-          {
-            [
-              ['ホーム', '/'],
-              ['はじめに', '/about/'],
-              ['お知らせ', '/news/'],
-              ['実績', '/work/'],
-            ].map(([label, href]) => (
-              <a class="py-2 text-sm transition hover:text-zinc-100" href={href}>
-                {label}
-              </a>
-            ))
-          }
-        </p>
-      </div>
+    <footer
+      class="sticky top-full mt-[fluid-sizing(3rem,5rem)] bg-slate-100 py-4 text-center text-sm"
+    >
+      <p class="wrapper">© <span x-data x-text="new Date().getFullYear()"></span> Yuhei Yasuda</p>
     </footer>
 
     {/* https://atfzl.com/don-t-attach-tooltips-to-document-body */}

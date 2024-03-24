@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Hero from '../../components/Hero.astro';
+import { SITE_LANG, SITE_REGION } from '../../consts';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'ブログ';
+const description = '';
+
+const blogEntries = (await getCollection('blog'))
+  .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .toReversed();
+
+const locale = `${SITE_LANG}-${SITE_REGION}`;
+
+const dateFormatter = new Intl.DateTimeFormat(locale, {
+  dateStyle: 'long',
+  timeZone: 'Asia/Tokyo',
+});
+---
+
+<Layout title={title} description={description}>
+  <Hero title={title} />
+
+  <main class="wrapper space-y-[fluid-sizing(3rem,5rem)]">
+    {
+      blogEntries.map((entry) => (
+        <article>
+          <header>
+            <p class="text-sm">
+              <time datetime={entry.data.pubDate.toISOString()}>
+                {dateFormatter.format(entry.data.pubDate)}
+              </time>
+            </p>
+            <h2 class="mt-3 text-xl font-bold [word-break:auto-phrase]">
+              <a class="text-sky-700 underline" href={`/blog/${entry.slug}`}>
+                {entry.data.title}
+              </a>
+            </h2>
+          </header>
+          <p class="mt-4 leading-[1.7]">{entry.data.description}</p>
+        </article>
+      ))
+    }
+  </main>
+</Layout>

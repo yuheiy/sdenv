@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Hero from '../../components/Hero.astro';
+import { SITE_LANG, SITE_REGION } from '../../consts';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const locale = `${SITE_LANG}-${SITE_REGION}`;
+
+const dateFormatter = new Intl.DateTimeFormat(locale, {
+  dateStyle: 'long',
+  timeZone: 'Asia/Tokyo',
+});
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <Hero
+    title={entry.data.title}
+    meta={`<time datetime="${entry.data.pubDate.toISOString()}">${dateFormatter.format(entry.data.pubDate)}</time>`}
+  />
+
+  <main class="prose wrapper">
+    <Content />
+  </main>
+</Layout>
