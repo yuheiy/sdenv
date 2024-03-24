@@ -2,11 +2,15 @@ import astro from 'eslint-plugin-astro';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 
 export default [
-  // global configurations
+  // globally ignoring
   {
-    ignores: ['dist/**'],
+    ignores: ['dist/'],
+  },
+
+  // global configuration
+  {
     linterOptions: {
-      reportUnusedDisableDirectives: 'warn',
+      reportUnusedDisableDirectives: 'error',
     },
   },
 
@@ -21,6 +25,7 @@ export default [
     plugins: { tailwindcss },
     rules: {
       ...tailwindcss.configs.recommended.rules,
+
       // use prettier-plugin-tailwindcss for class sorting
       'tailwindcss/classnames-order': 'off',
     },
