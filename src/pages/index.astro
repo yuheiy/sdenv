@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 
 const tagline = 'ウェブサイトのためのフロントエンド開発スターターキット';
 const description =
-  'sdenv（読み方: えすでぃーえんぶ）は、ウェブサイト（not ウェブアプリケーション）のためのフロントエンド開発スターターキットです。モダンなプラクティスを取り入れながらも、より多くのウェブサイト開発者に向けて、HTML中心の開発環境を構成しています。';
+  'sdenv（読み方: えすでぃーえんぶ）は、ウェブサイト（not ウェブアプリケーション）のためのフロントエンド開発スターターキットです。モダンなプラクティスを取り入れながらも、より多くのウェブサイト開発者に向けたHTML中心の開発環境を構成しています。';
 ---
 
 <Layout isHome tagline={tagline} description={description}>
@@ -32,34 +32,40 @@ const description =
   <main class="wrapper mb-[fluid-sizing(4rem,10rem)] max-w-[90rem]">
     <div class="flex flex-col items-center gap-x-4 lg:flex-row" role="list">
       {
-        [
-          {
-            image: {
-              src: logoAstroImage,
-              alt: 'Astro',
-            },
-            link: 'https://astro.build/',
-            label: 'Webサイトフレームワーク',
-          },
-          {
-            image: {
-              src: logoTailwindcssImage,
-              alt: 'Tailwind CSS',
-            },
-            link: 'https://tailwindcss.com/',
-            label: 'CSSフレームワーク',
-          },
-          {
-            image: {
-              src: logoAlpinejsImage,
-              alt: 'Alpine.js',
-            },
-            link: 'https://alpinejs.dev/',
-            label: 'JavaScriptフレームワーク',
-          },
-        ].map(({ image, link, label }, i) => (
+        (
+          [
+            [
+              {
+                src: logoAstroImage,
+                alt: 'Astro',
+              },
+              'https://astro.build/',
+              'Webサイトフレームワーク',
+            ],
+            [
+              {
+                src: logoTailwindcssImage,
+                alt: 'Tailwind CSS',
+              },
+              'https://tailwindcss.com/',
+              'CSSフレームワーク',
+            ],
+            [
+              {
+                src: logoAlpinejsImage,
+                alt: 'Alpine.js',
+              },
+              'https://alpinejs.dev/',
+              'JavaScriptフレームワーク',
+            ],
+          ] as const
+        ).map(([image, link, label], i) => (
           <>
-            {i > 0 && <div class="mb-5 text-7xl font-bold text-slate-200">×</div>}
+            {i > 0 && (
+              <div class="text-7xl font-bold text-slate-200 lg:mb-5">
+                {/* TODO: svgに置き換える */}×
+              </div>
+            )}
             <div class="w-full rounded-xl border border-slate-300" role="listitem">
               <p>
                 <a href={link} target="_blank">
