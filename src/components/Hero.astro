@@ -1,14 +1,13 @@
 ---
 interface Props {
   title: string;
-  meta?: string | undefined;
 }
 
-const { title, meta } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <header class="wrapper pt-[fluid-sizing(3rem,5rem)]">
-  {meta && <p class="mb-3 text-sm" set:html={meta} />}
+  <p class="mb-3 text-sm empty:hidden"><slot /></p>
   <h1
     class="text-pretty text-[length:fluid-sizing(2rem,3rem)] font-bold leading-normal kerning-all [word-break:auto-phrase]"
   >
