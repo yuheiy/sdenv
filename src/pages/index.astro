@@ -1,10 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import crossImage from '../assets/home/cross.svg';
-import logoAlpinejsImage from '../assets/home/logo-alpinejs.svg';
-import logoAstroImage from '../assets/home/logo-astro.svg';
-import logoTailwindcssImage from '../assets/home/logo-tailwindcss.svg';
 import { SITE_TITLE } from '../consts';
 import Layout from '../layouts/Layout.astro';
 
@@ -15,7 +11,7 @@ const description =
 const developmentStacks = [
   {
     image: {
-      src: logoAstroImage,
+      src: import('../assets/home/logo-astro.svg'),
       alt: 'Astro',
     },
     link: 'https://astro.build/',
@@ -23,7 +19,7 @@ const developmentStacks = [
   },
   {
     image: {
-      src: logoTailwindcssImage,
+      src: import('../assets/home/logo-tailwindcss.svg'),
       alt: 'Tailwind CSS',
     },
     link: 'https://tailwindcss.com/',
@@ -31,7 +27,7 @@ const developmentStacks = [
   },
   {
     image: {
-      src: logoAlpinejsImage,
+      src: import('../assets/home/logo-alpinejs.svg'),
       alt: 'Alpine.js',
     },
     link: 'https://alpinejs.dev/',
@@ -62,7 +58,9 @@ const developmentStacks = [
       {
         developmentStacks.map(({ image, link, label }, i) => (
           <>
-            {i > 0 && <Image class="size-10 lg:mb-5" src={crossImage} alt="×" />}
+            {i > 0 && (
+              <Image class="size-10 lg:mb-5" src={import('../assets/home/cross.svg')} alt="×" />
+            )}
             <div class="w-full rounded-xl border border-slate-300" role="listitem">
               <p>
                 <a href={link} target="_blank">
