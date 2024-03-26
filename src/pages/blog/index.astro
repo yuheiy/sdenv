@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Hero from '../../components/Hero.astro';
-import { SITE_LANG, SITE_REGION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
+import { dateFormatter } from '../../lib/date-time-formatter';
 
 const title = 'ブログ';
 const description = 'sdenvに関するブログの一覧です。';
@@ -10,13 +10,6 @@ const description = 'sdenvに関するブログの一覧です。';
 const blogEntries = (await getCollection('blog'))
   .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
   .toReversed();
-
-const locale = `${SITE_LANG}-${SITE_REGION}`;
-
-const dateFormatter = new Intl.DateTimeFormat(locale, {
-  dateStyle: 'long',
-  timeZone: 'Asia/Tokyo',
-});
 ---
 
 <Layout title={title} description={description}>
