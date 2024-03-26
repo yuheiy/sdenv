@@ -5,7 +5,7 @@ import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
 import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
 
-interface SharedProps {
+interface BaseProps {
   isHome?: false | undefined;
   is404?: false | undefined;
   title: string;
@@ -14,14 +14,14 @@ interface SharedProps {
   ogImage?: string | undefined;
 }
 
-type GeneralProps = SharedProps;
+type GeneralProps = BaseProps;
 
-type HomeProps = Omit<SharedProps, 'isHome' | 'title'> & {
+type HomeProps = Omit<BaseProps, 'isHome' | 'title'> & {
   isHome: true;
   tagline: string;
 };
 
-type NotFoundProps = Omit<SharedProps, 'is404'> & {
+type NotFoundProps = Omit<BaseProps, 'is404'> & {
   is404: true;
 };
 
@@ -94,7 +94,7 @@ if (!is404) {
     }
 
     <nav
-      class="sticky top-0 z-10 bg-[#111] text-[length:fluid-sizing(375px_0.875rem,sm_1rem)] font-bold text-white"
+      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid-sizing(375px_0.875rem,sm_1rem)] font-bold text-white"
     >
       <ul class="wrapper flex max-w-none items-center gap-x-[fluid-sizing(375px_1rem,sm_1.5rem)]">
         <li class="mr-auto">
@@ -104,7 +104,7 @@ if (!is404) {
           </a>
         </li>
         <li>
-          <a class="block py-2" href="/blog">ブログ</a>
+          <a class="block py-2" href="/blog/">ブログ</a>
         </li>
         <li>
           <a class="block py-2" href="https://github.com/yuheiy/sdenv" target="_blank">GitHub</a>

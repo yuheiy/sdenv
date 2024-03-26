@@ -5,7 +5,7 @@ import { SITE_LANG, SITE_REGION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 
 const title = 'ブログ';
-const description = '';
+const description = 'sdenvに関するブログの一覧です。';
 
 const blogEntries = (await getCollection('blog'))
   .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
@@ -33,7 +33,7 @@ const dateFormatter = new Intl.DateTimeFormat(locale, {
               </time>
             </p>
             <h2 class="mt-3 text-xl font-bold [word-break:auto-phrase]">
-              <a class="text-sky-700 underline" href={`/blog/${entry.slug}`}>
+              <a class="text-sky-700 underline" href={`/blog/${entry.slug}/`}>
                 {entry.data.title}
               </a>
             </h2>
