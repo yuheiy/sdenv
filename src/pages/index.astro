@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
+import crossImage from '../assets/home/cross.svg';
 import logoAlpinejsImage from '../assets/home/logo-alpinejs.svg';
 import logoAstroImage from '../assets/home/logo-astro.svg';
 import logoTailwindcssImage from '../assets/home/logo-tailwindcss.svg';
@@ -61,11 +62,7 @@ const developmentStacks = [
       {
         developmentStacks.map(({ image, link, label }, i) => (
           <>
-            {i > 0 && (
-              <div class="text-7xl font-bold text-slate-200 lg:mb-5">
-                <Icon name="cross" class="size-10" role="img" aria-label="×" />
-              </div>
-            )}
+            {i > 0 && <Image class="size-10 lg:mb-5" src={crossImage} alt="×" />}
             <div class="w-full rounded-xl border border-slate-300" role="listitem">
               <p>
                 <a href={link} target="_blank">
