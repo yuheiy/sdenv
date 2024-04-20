@@ -7,13 +7,6 @@ export default [
     ignores: ['dist/'],
   },
 
-  // global configurations
-  {
-    linterOptions: {
-      reportUnusedDisableDirectives: 'error',
-    },
-  },
-
   // eslint-plugin-astro
   ...astro.configs['flat/jsx-a11y-recommended'],
 
