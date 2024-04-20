@@ -10,7 +10,7 @@ export default [
   // global configurations
   {
     linterOptions: {
-      reportUnusedDisableDirectives: 'error',
+      reportUnusedDisableDirectives: 'warn',
     },
   },
 
