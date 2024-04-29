@@ -30,7 +30,7 @@
     "chokidar-cli": "3.0.0",
     "concurrently": "8.2.2",
     "eslint": "8.57.0",
-    "eslint-plugin-astro": "1.1.0",
+    "eslint-plugin-astro": "1.0.3",
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-tailwindcss": "3.15.1",
     "postcss-fluid-sizing-function": "0.0.1",
