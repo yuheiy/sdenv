@@ -43,6 +43,7 @@
   /* Extensions > ESLint */
   // https://github.com/ota-meshi/eslint-plugin-astro?tab=readme-ov-file#visual-studio-code
   "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+  // https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint#version-3.0.5-pre-release
   "eslint.experimental.useFlatConfig": true,
 
   /* Extensions > Prettier */
