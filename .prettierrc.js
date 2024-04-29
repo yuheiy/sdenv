@@ -4,7 +4,7 @@ export default {
     'prettier-plugin-astro',
     'prettier-plugin-css-order',
     'prettier-plugin-organize-imports',
-    'prettier-plugin-tailwindcss',
+    'prettier-plugin-tailwindcss', // MUST come last
   ],
   printWidth: 100,
   singleQuote: true,
