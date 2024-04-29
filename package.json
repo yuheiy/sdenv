@@ -21,7 +21,6 @@
     "@astrojs/sitemap": "3.1.4",
     "@astrojs/tailwind": "5.1.0",
     "@tailwindcss/container-queries": "0.1.1",
-    "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "@types/alpinejs": "3.13.10",
     "@typescript-eslint/parser": "7.7.1",
     "alpinejs": "3.13.10",
