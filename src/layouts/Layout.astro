@@ -94,9 +94,9 @@ if (!is404) {
     }
 
     <nav
-      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid-sizing(375px_0.875rem,sm_1rem)] font-bold text-white"
+      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid(375px_0.875rem,sm_1rem)] font-bold text-white"
     >
-      <ul class="wrapper flex max-w-none items-center gap-x-[fluid-sizing(375px_1rem,sm_1.5rem)]">
+      <ul class="wrapper flex max-w-none items-center gap-x-[fluid(375px_1rem,sm_1.5rem)]">
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
@@ -120,9 +120,7 @@ if (!is404) {
     <slot />
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer
-      class="sticky top-full mt-[fluid-sizing(3rem,5rem)] bg-slate-100 py-4 text-center text-sm"
-    >
+    <footer class="sticky top-full mt-[fluid(3rem,5rem)] bg-slate-100 py-4 text-center text-sm">
       <p class="wrapper">© <span x-data x-text="new Date().getFullYear()"></span> Yuhei Yasuda</p>
     </footer>
 

@@ -15,7 +15,7 @@ const blogEntries = (await getCollection('blog'))
 <Layout title={title} description={description}>
   <Hero title={title} />
 
-  <main class="wrapper space-y-[fluid-sizing(3rem,5rem)]">
+  <main class="wrapper space-y-[fluid(3rem,5rem)]">
     {
       blogEntries.map((entry) => (
         <article>
