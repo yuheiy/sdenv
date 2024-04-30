@@ -1,6 +1,16 @@
 import astro from 'eslint-plugin-astro';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 
+const tailwindcssConfig = {
+  languageOptions: {
+    parserOptions: tailwindcss.configs.recommended.parserOptions,
+  },
+  plugins: {
+    tailwindcss,
+  },
+  rules: tailwindcss.configs.recommended.rules,
+};
+
 export default [
   // globally ignoring
   {
@@ -18,14 +28,9 @@ export default [
   ...astro.configs['flat/jsx-a11y-recommended'],
 
   // eslint-plugin-tailwindcss
+  tailwindcssConfig,
   {
-    languageOptions: {
-      parserOptions: tailwindcss.configs.recommended.parserOptions,
-    },
-    plugins: { tailwindcss },
     rules: {
-      ...tailwindcss.configs.recommended.rules,
-
       // use prettier-plugin-tailwindcss for class sorting
       'tailwindcss/classnames-order': 'off',
     },
