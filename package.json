@@ -6,7 +6,7 @@
     "dev": "concurrently --raw \"npm:dev:*\"",
     "dev:astro": "astro dev --host",
     "dev:css": "chokidar \"src/styles/**/*.css\" --command \"touch tailwind.config.cjs\" --debounce 0 --silent",
-    "fix": "npm run fix:prettier && npm run fix:eslint",
+    "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
     "lint": "concurrently --raw \"npm:lint:*\"",
