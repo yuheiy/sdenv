@@ -1,10 +1,10 @@
-const resolveConfig = require('tailwindcss/resolveConfig');
-const tailwindConfig = require('./tailwind.config.cjs');
+import resolveConfig from 'tailwindcss/resolveConfig.js';
+import tailwindConfig from './tailwind.config.cjs';
 
 const { screens } = resolveConfig(tailwindConfig).theme;
 
 /** @type {import('postcss-load-config').Config} */
-module.exports = {
+export default {
   plugins: {
     'postcss-fluid-sizing-function': {
       viewportWidths: {
