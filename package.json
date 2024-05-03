@@ -45,6 +45,6 @@
   },
   "packageManager": "npm@10.7.0",
   "engines": {
-    "node": "20"
+    "node": "^20.9"
   }
 }
