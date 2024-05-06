@@ -7,9 +7,9 @@ import { dateFormatter } from '../../lib/date-time-formatter';
 const title = 'ブログ';
 const description = 'sdenvに関するブログの一覧です。';
 
-const blogEntries = (await getCollection('blog'))
-  .toSorted((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
-  .toReversed();
+const entries = await getCollection('blog').then((entries) =>
+  entries.toSorted((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+);
 ---
 
 <Layout title={title} description={description}>
@@ -17,7 +17,7 @@ const blogEntries = (await getCollection('blog'))
 
   <main class="wrapper space-y-[fluid(3rem,5rem)]">
     {
-      blogEntries.map((entry) => (
+      entries.map((entry) => (
         <article>
           <header>
             <p class="text-sm">
