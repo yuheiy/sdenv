@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
-import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
+import { siteLang, siteRegion, siteTitle, siteTwitterId } from '../consts';
 
 interface BaseProps {
   isHome?: false | undefined;
@@ -46,7 +46,7 @@ if (!is404) {
 -->
 <html
   class="underline-offset-[0.125em] kerning-none [line-break:normal] [overflow-wrap:anywhere] focus-within:motion-safe:scroll-smooth"
-  lang={SITE_LANG}
+  lang={siteLang}
 >
   <head>
     {
@@ -60,7 +60,7 @@ if (!is404) {
     <meta name="viewport" content="width=device-width" />
 
     <title
-      set:html={[!isHome && Astro.props.title, SITE_TITLE, isHome && Astro.props.tagline]
+      set:html={[!isHome && Astro.props.title, siteTitle, isHome && Astro.props.tagline]
         .filter(Boolean)
         .join(' &#8211; ')}
     />
@@ -69,16 +69,16 @@ if (!is404) {
 
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={`@${SITE_TWITTER_ID}`} />
-    <meta name="twitter:title" content={isHome ? SITE_TITLE : Astro.props.title} />
+    <meta name="twitter:site" content={`@${siteTwitterId}`} />
+    <meta name="twitter:title" content={isHome ? siteTitle : Astro.props.title} />
 
     <meta property="og:title" content={isHome ? Astro.props.tagline : Astro.props.title} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={resolvedOgImage} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {description && <meta property="og:description" content={description} />}
-    <meta property="og:site_name" content={SITE_TITLE} />
-    <meta property="og:locale" content={`${SITE_LANG}_${SITE_REGION}`} />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:locale" content={`${siteLang}_${siteRegion}`} />
 
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
@@ -100,7 +100,7 @@ if (!is404) {
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
-            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={SITE_TITLE} />
+            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={siteTitle} />
           </a>
         </li>
         <li>
@@ -110,7 +110,7 @@ if (!is404) {
           <a class="block py-2" href="https://github.com/yuheiy/sdenv" target="_blank">GitHub</a>
         </li>
         <li>
-          <a class="block py-2" href={`https://twitter.com/${SITE_TWITTER_ID}`} target="_blank"
+          <a class="block py-2" href={`https://twitter.com/${siteTwitterId}`} target="_blank"
             >Twitter</a
           >
         </li>

@@ -1,6 +1,6 @@
-import { SITE_LANG, SITE_REGION } from '../consts';
+import { siteLang, siteRegion } from '../consts';
 
-const locale = `${SITE_LANG}-${SITE_REGION}`;
+const locale = `${siteLang}-${siteRegion}`;
 
 export const dateFormatter = new Intl.DateTimeFormat(locale, {
   dateStyle: 'long',

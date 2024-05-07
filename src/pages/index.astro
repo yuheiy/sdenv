@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import { SITE_TITLE } from '../consts';
+import { siteTitle } from '../consts';
 import Layout from '../layouts/Layout.astro';
 
 const tagline = 'ウェブサイトのためのフロントエンド開発スターターキット';
@@ -43,7 +43,7 @@ const developmentStacks = [
         name="logo"
         class="mx-auto h-[fluid(2.5rem,6rem)] w-auto text-[#111111]"
         role="img"
-        aria-label={SITE_TITLE}
+        aria-label={siteTitle}
       />
     </h1>
     <p
