@@ -13,7 +13,7 @@
     "lint:eslint": "eslint . --max-warnings 0",
     "lint:prettier": "prettier . --check",
     "preview": "astro preview",
-    "test": "vitest"
+    "test": "vitest --passWithNoTests"
   },
   "dependencies": {
     "@astrojs/check": "0.5.10",
