@@ -14,16 +14,16 @@ interface BaseProps {
   ogImage?: string | undefined;
 }
 
-type GeneralProps = BaseProps;
+interface GeneralProps extends BaseProps {}
 
-type HomeProps = Omit<BaseProps, 'isHome' | 'title'> & {
+interface HomeProps extends Omit<BaseProps, 'isHome' | 'title'> {
   isHome: true;
   tagline: string;
-};
+}
 
-type NotFoundProps = Omit<BaseProps, 'is404'> & {
+interface NotFoundProps extends Omit<BaseProps, 'is404'> {
   is404: true;
-};
+}
 
 type Props = GeneralProps | HomeProps | NotFoundProps;
 
