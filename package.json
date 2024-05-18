@@ -22,7 +22,7 @@
     "@astrojs/tailwind": "5.1.0",
     "@tailwindcss/container-queries": "0.1.1",
     "@types/alpinejs": "3.13.10",
-    "@typescript-eslint/parser": "7.8.0",
+    "@typescript-eslint/parser": "8.0.0-alpha.13",
     "alpinejs": "3.13.10",
     "astro": "4.7.0",
     "astro-icon": "1.1.0",
