@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
-import { SITE_LANG, SITE_REGION, SITE_TITLE, SITE_TWITTER_ID } from '../consts';
+import { siteLang, siteRegion, siteTitle, siteTwitterId } from '../consts';
 
 interface BaseProps {
   isHome?: false | undefined;
@@ -14,16 +14,16 @@ interface BaseProps {
   ogImage?: string | undefined;
 }
 
-type GeneralProps = BaseProps;
+interface GeneralProps extends BaseProps {}
 
-type HomeProps = Omit<BaseProps, 'isHome' | 'title'> & {
+interface HomeProps extends Omit<BaseProps, 'isHome' | 'title'> {
   isHome: true;
   tagline: string;
-};
+}
 
-type NotFoundProps = Omit<BaseProps, 'is404'> & {
+interface NotFoundProps extends Omit<BaseProps, 'is404'> {
   is404: true;
-};
+}
 
 type Props = GeneralProps | HomeProps | NotFoundProps;
 
@@ -34,10 +34,12 @@ const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } =
 
 const resolvedOgImage = new URL(ogImage, Astro.site);
 
-let canonicalURL: URL | null = null;
-if (!is404) {
-  canonicalURL = new URL(Astro.url.pathname, Astro.site);
-}
+const canonicalURL = (() => {
+  if (is404) {
+    return null;
+  }
+  return new URL(Astro.url.pathname, Astro.site);
+})();
 ---
 
 <!--
@@ -46,7 +48,7 @@ if (!is404) {
 -->
 <html
   class="underline-offset-[0.125em] kerning-none [line-break:normal] [overflow-wrap:anywhere] focus-within:motion-safe:scroll-smooth"
-  lang={SITE_LANG}
+  lang={siteLang}
 >
   <head>
     {
@@ -60,7 +62,7 @@ if (!is404) {
     <meta name="viewport" content="width=device-width" />
 
     <title
-      set:html={[!isHome && Astro.props.title, SITE_TITLE, isHome && Astro.props.tagline]
+      set:html={[!isHome && Astro.props.title, siteTitle, isHome && Astro.props.tagline]
         .filter(Boolean)
         .join(' &#8211; ')}
     />
@@ -69,16 +71,16 @@ if (!is404) {
 
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={`@${SITE_TWITTER_ID}`} />
-    <meta name="twitter:title" content={isHome ? SITE_TITLE : Astro.props.title} />
+    <meta name="twitter:site" content={`@${siteTwitterId}`} />
+    <meta name="twitter:title" content={isHome ? siteTitle : Astro.props.title} />
 
     <meta property="og:title" content={isHome ? Astro.props.tagline : Astro.props.title} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={resolvedOgImage} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {description && <meta property="og:description" content={description} />}
-    <meta property="og:site_name" content={SITE_TITLE} />
-    <meta property="og:locale" content={`${SITE_LANG}_${SITE_REGION}`} />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:locale" content={`${siteLang}_${siteRegion}`} />
 
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
@@ -94,13 +96,13 @@ if (!is404) {
     }
 
     <nav
-      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid-sizing(375px_0.875rem,sm_1rem)] font-bold text-white"
+      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid(375px_0.875rem,sm_1rem)] font-bold text-white"
     >
-      <ul class="wrapper flex max-w-none items-center gap-x-[fluid-sizing(375px_1rem,sm_1.5rem)]">
+      <ul class="wrapper flex max-w-none items-center gap-x-[fluid(375px_1rem,sm_1.5rem)]">
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
-            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={SITE_TITLE} />
+            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={siteTitle} />
           </a>
         </li>
         <li>
@@ -110,7 +112,7 @@ if (!is404) {
           <a class="block py-2" href="https://github.com/yuheiy/sdenv" target="_blank">GitHub</a>
         </li>
         <li>
-          <a class="block py-2" href={`https://twitter.com/${SITE_TWITTER_ID}`} target="_blank"
+          <a class="block py-2" href={`https://twitter.com/${siteTwitterId}`} target="_blank"
             >Twitter</a
           >
         </li>
@@ -120,9 +122,7 @@ if (!is404) {
     <slot />
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer
-      class="sticky top-full mt-[fluid-sizing(3rem,5rem)] bg-slate-100 py-4 text-center text-sm"
-    >
+    <footer class="sticky top-full mt-[fluid(3rem,5rem)] bg-slate-100 py-4 text-center text-sm">
       <p class="wrapper">© <span x-data x-text="new Date().getFullYear()"></span> Yuhei Yasuda</p>
     </footer>
 

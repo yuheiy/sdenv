@@ -75,7 +75,7 @@ npm run fix
 │   └── styles/         # Tailwind CSSによって読み込まれるCSSファイル
 ├── astro.config.ts     # Astroの設定
 ├── package.json        # 依存パッケージを管理するための設定
-├── postcss.config.cjs  # PostCSSの設定
+├── postcss.config.js   # PostCSSの設定
 ├── tailwind.config.cjs # Tailwind CSSの設定
 └── tsconfig.json       # TypeScriptの設定
 ```

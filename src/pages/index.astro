@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import { SITE_TITLE } from '../consts';
+import { siteTitle } from '../consts';
 import Layout from '../layouts/Layout.astro';
 
 const tagline = 'ウェブサイトのためのフロントエンド開発スターターキット';
@@ -33,27 +33,27 @@ const developmentStacks = [
     link: 'https://alpinejs.dev/',
     label: 'JavaScriptフレームワーク',
   },
-] as const;
+];
 ---
 
 <Layout isHome tagline={tagline} description={description}>
-  <header class="wrapper py-[fluid-sizing(4rem,10rem)]">
+  <header class="wrapper py-[fluid(4rem,10rem)]">
     <h1>
       <Icon
         name="logo"
-        class="mx-auto h-[fluid-sizing(2.5rem,6rem)] w-auto text-[#111111]"
+        class="mx-auto h-[fluid(2.5rem,6rem)] w-auto text-[#111111]"
         role="img"
-        aria-label={SITE_TITLE}
+        aria-label={siteTitle}
       />
     </h1>
     <p
-      class="mt-[fluid-sizing(1.25rem,2.5rem)] text-pretty text-center text-[length:fluid-sizing(1rem,1.5rem)] font-bold kerning-all [word-break:auto-phrase]"
+      class="mt-[fluid(1.25rem,2.5rem)] text-pretty text-center text-[length:fluid(1rem,1.5rem)] font-bold kerning-all [word-break:auto-phrase]"
     >
       {tagline}
     </p>
   </header>
 
-  <main class="wrapper mb-[fluid-sizing(4rem,10rem)] max-w-[90rem]">
+  <main class="wrapper mb-[fluid(4rem,10rem)] max-w-[90rem]">
     <div class="flex flex-col items-center gap-4 lg:flex-row" role="list">
       {
         developmentStacks.map(({ image, link, label }, i) => (

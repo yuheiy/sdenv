@@ -1,10 +1,10 @@
 /** @type {import('prettier').Config} */
 export default {
   plugins: [
-    '@trivago/prettier-plugin-sort-imports',
     'prettier-plugin-astro',
     'prettier-plugin-css-order',
-    'prettier-plugin-tailwindcss',
+    'prettier-plugin-organize-imports',
+    'prettier-plugin-tailwindcss', // MUST come last
   ],
   printWidth: 100,
   singleQuote: true,
