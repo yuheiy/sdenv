@@ -17,13 +17,6 @@ export default [
     ignores: ['dist/'],
   },
 
-  // global configurations
-  {
-    linterOptions: {
-      reportUnusedDisableDirectives: 'warn',
-    },
-  },
-
   // eslint-plugin-astro
   ...astro.configs['flat/jsx-a11y-recommended'],
 
