@@ -32,8 +32,6 @@
   },
 
   /* Extensions > Tailwind CSS IntelliSense */
-  // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#tailwindcss.classattributes
-  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
   // https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss#tailwindcss.emmetcompletions
   "tailwindCSS.emmetCompletions": true,
 
