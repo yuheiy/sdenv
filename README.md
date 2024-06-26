@@ -3,7 +3,7 @@
 sdenv（読み方: えすでぃーえんぶ）は、ウェブサイト（not ウェブアプリケーション）のためのフロントエンド開発スターターキットです。モダンなプラクティスを取り入れながらも、より多くのウェブサイト開発者に向けたHTML中心の開発環境を構成しています。
 
 > [!NOTE]
-> 「ウェブサイト v.s. ウェブアプリケーション」の二分法には反論があります。「[The Website vs. Web App Dichotomy Doesn't Exist](https://jakelazaroff.com/words/the-website-vs-web-app-dichotomy-doesnt-exist/)」では、ウェブサイトを分類するための観点に加えて、開発技術の適用範囲についても言及されています。
+> 「ウェブサイト vs. ウェブアプリケーション」の二分法には反論があります。「[The Website vs. Web App Dichotomy Doesn't Exist](https://jakelazaroff.com/words/the-website-vs-web-app-dichotomy-doesnt-exist/)」では、ウェブサイトを分類するための観点に加えて、開発技術の適用範囲についても言及されています。
 
 次のツールを採用しています:
 
