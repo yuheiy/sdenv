@@ -16,16 +16,10 @@ export default [
     },
   },
 
-  // eslint built-in
   js.configs.recommended,
-
-  // typescript-eslint
   ...ts.configs.recommended,
-
-  // eslint-plugin-astro
   ...astro.configs['flat/jsx-a11y-recommended'],
 
-  // eslint-plugin-tailwindcss
   ...tailwindcss.configs['flat/recommended'],
   {
     rules: {
