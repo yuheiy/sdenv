@@ -1,10 +1,12 @@
+import js from '@eslint/js';
 import astro from 'eslint-plugin-astro';
 import tailwindcss from 'eslint-plugin-tailwindcss';
+import ts from 'typescript-eslint';
 
 export default [
   // globally ignoring
   {
-    ignores: ['dist/'],
+    ignores: ['dist/', '.astro/'],
   },
 
   // global configurations
@@ -13,6 +15,12 @@ export default [
       reportUnusedDisableDirectives: 'warn',
     },
   },
+
+  // eslint built-in
+  js.configs.recommended,
+
+  // typescript-eslint
+  ...ts.configs.recommended,
 
   // eslint-plugin-astro
   ...astro.configs['flat/jsx-a11y-recommended'],
