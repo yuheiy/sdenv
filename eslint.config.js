@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
 import astro from 'eslint-plugin-astro';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 import ts from 'typescript-eslint';
@@ -27,4 +28,6 @@ export default [
       'tailwindcss/classnames-order': 'off',
     },
   },
+
+  prettier, // MUST come last
 ];
