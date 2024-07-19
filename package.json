@@ -31,7 +31,6 @@
     "chokidar-cli": "3.0.0",
     "concurrently": "8.2.2",
     "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
     "eslint-plugin-astro": "1.2.3",
     "eslint-plugin-jsx-a11y": "6.9.0",
     "eslint-plugin-tailwindcss": "3.17.4",
