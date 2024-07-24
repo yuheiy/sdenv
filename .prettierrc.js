@@ -8,6 +8,7 @@ export default {
   ],
   printWidth: 100,
   singleQuote: true,
+  organizeImportsSkipDestructiveCodeActions: true,
   overrides: [
     {
       files: '*.astro',
