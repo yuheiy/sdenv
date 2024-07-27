@@ -67,8 +67,6 @@ const canonicalURL = (() => {
         .join(' &#8211; ')}
     />
 
-    <script src="../scripts/main.ts"></script>
-
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={`@${siteTwitterId}`} />
@@ -85,6 +83,8 @@ const canonicalURL = (() => {
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
     <link rel="icon" href={faviconImage.src} type="image/svg+xml" />
+
+    <script src="../scripts/main.ts"></script>
   </head>
 
   <body class="min-h-svh">
