@@ -1,8 +1,13 @@
-/* eslint-disable */
-const fs = require('node:fs');
-const path = require('node:path');
-const postcss = require('postcss');
-const plugin = require('tailwindcss/plugin');
+import containerQueries from '@tailwindcss/container-queries';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import postcss from 'postcss';
+import animate from 'tailwindcss-animate';
+import plugin from 'tailwindcss/plugin.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Loads CSS files through Tailwind’s plugin system to enable IntelliSense support.
@@ -72,7 +77,7 @@ const autoGrid = plugin(
 );
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   future: {
     hoverOnlyWhenSupported: true,
@@ -84,10 +89,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/container-queries'),
-    require('tailwindcss-animate'),
-    cssFiles,
-    autoGrid,
-  ],
+  plugins: [containerQueries, animate, cssFiles, autoGrid],
 };
