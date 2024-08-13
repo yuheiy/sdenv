@@ -1,9 +1,5 @@
 import Alpine from 'alpinejs';
-
-async function loadAlpineModules() {
-  // enable code splitting
-  await import('./alpinejs');
-}
+import './alpinejs';
 
 async function main() {
   // https://vitejs.dev/guide/env-and-mode.html#env-variables
@@ -15,8 +11,6 @@ async function main() {
       DEV: import.meta.env.DEV,
     });
   }
-
-  await loadAlpineModules();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).Alpine = Alpine;
