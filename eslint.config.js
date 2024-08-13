@@ -17,7 +17,16 @@ export default [
   },
 
   js.configs.recommended,
+
   ...ts.configs.recommended,
+  ...ts.configs.stylistic,
+  {
+    rules: {
+      // TypeScript already catches unused variables
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+
   ...astro.configs['flat/jsx-a11y-recommended'],
 
   ...tailwindcss.configs['flat/recommended'],
