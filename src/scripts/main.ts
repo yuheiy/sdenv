@@ -1,5 +1,6 @@
 import Alpine from 'alpinejs';
-import './alpinejs';
+import './components';
+import './stores';
 
 async function main() {
   // https://vitejs.dev/guide/env-and-mode.html#env-variables
