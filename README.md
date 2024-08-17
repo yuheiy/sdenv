@@ -80,4 +80,4 @@ npm run fix
 └── tsconfig.json       # TypeScriptの設定
 ```
 
-詳しくは、Astro公式ドキュメントの「[Project Structure](https://docs.astro.build/en/core-concepts/project-structure/)」も参照してください。
+詳しくは、Astro公式ドキュメントの「[Project Structure](https://docs.astro.build/en/core-concepts/project-structure/)」も参照してください。また、大規模なプロジェクトにおいては、[Feature-Sliced Design](https://yuheiy.com/2024-08-17-feature-sliced-design-for-astro)の採用も検討してください。
