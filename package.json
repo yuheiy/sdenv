@@ -19,13 +19,13 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.3",
-    "@astrojs/mdx": "3.1.4",
+    "@astrojs/mdx": "3.1.5",
     "@astrojs/sitemap": "3.1.6",
     "@astrojs/tailwind": "5.1.0",
     "@tailwindcss/container-queries": "0.1.1",
     "@types/alpinejs": "3.13.10",
     "alpinejs": "3.14.1",
-    "astro": "4.14.5",
+    "astro": "4.15.0",
     "astro-icon": "1.1.1",
     "postcss-fluid-sizing-function": "0.0.2",
     "rollup-plugin-visualizer": "5.12.0",
@@ -46,9 +46,9 @@
     "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-tailwindcss": "0.6.6",
-    "typescript-eslint": "8.2.0"
+    "typescript-eslint": "8.3.0"
   },
-  "packageManager": "npm@10.8.2",
+  "packageManager": "npm@10.8.3",
   "engines": {
     "node": "^20.9"
   }
