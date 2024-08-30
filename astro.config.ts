@@ -10,9 +10,6 @@ export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), tailwind({ nesting: true }), icon()],
   vite: {
-    define: {
-      'import.meta.vitest': 'undefined',
-    },
     plugins: [visualizer()],
   },
 });
