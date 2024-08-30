@@ -23,8 +23,6 @@ jobs:
         with:
           node-version-file: package.json
           cache: npm
-      - name: Enable Corepack
-        run: corepack enable
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -43,8 +41,6 @@ jobs:
         with:
           node-version-file: package.json
           cache: npm
-      - name: Enable Corepack
-        run: corepack enable
       - name: Install dependencies
         run: npm ci
       - name: Build

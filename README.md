@@ -26,7 +26,6 @@ sdenvは、これらのツールの使い方を理解していることを前提
 セットアップ:
 
 ```bash
-corepack enable
 npm ci
 ```
 
