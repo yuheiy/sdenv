@@ -12,7 +12,7 @@
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
     "lint": "concurrently --raw \"npm:lint:*\"",
-    "lint:eslint": "eslint . --max-warnings 0",
+    "lint:eslint": "eslint --max-warnings 0",
     "lint:prettier": "prettier . --check",
     "preview": "astro preview",
     "test": "vitest --passWithNoTests"
@@ -24,7 +24,7 @@
     "@tailwindcss/container-queries": "0.1.1",
     "@types/alpinejs": "3.13.10",
     "alpinejs": "3.14.1",
-    "astro": "4.15.1",
+    "astro": "4.15.4",
     "astro-icon": "1.1.1",
     "postcss-fluid-sizing-function": "0.0.2",
     "tailwindcss-animate": "1.0.7",
@@ -32,19 +32,19 @@
     "vitest": "2.0.5"
   },
   "devDependencies": {
-    "@eslint/js": "9.9.1",
+    "@eslint/js": "9.10.0",
     "chokidar-cli": "3.0.0",
-    "concurrently": "8.2.2",
-    "eslint": "8.57.0",
+    "concurrently": "9.0.0",
+    "eslint": "9.10.0",
     "eslint-plugin-astro": "1.2.3",
-    "eslint-plugin-jsx-a11y": "6.9.0",
+    "eslint-plugin-jsx-a11y": "6.10.0",
     "eslint-plugin-tailwindcss": "3.17.4",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-tailwindcss": "0.6.6",
-    "typescript-eslint": "8.3.0"
+    "typescript-eslint": "8.4.0"
   },
   "engines": {
     "node": "^20.9"

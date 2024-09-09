@@ -10,13 +10,6 @@ export default [
     ignores: ['dist/', '.astro/'],
   },
 
-  // global configurations
-  {
-    linterOptions: {
-      reportUnusedDisableDirectives: 'warn',
-    },
-  },
-
   js.configs.recommended,
 
   ...ts.configs.recommended,
