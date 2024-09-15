@@ -3,7 +3,7 @@ import astro from 'eslint-plugin-astro';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 import ts from 'typescript-eslint';
 
-/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
+/** @type {import('eslint').Linter.Config} */
 export default [
   // globally ignoring
   {
