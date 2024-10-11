@@ -1,7 +1,9 @@
 import resolveConfig from 'tailwindcss/resolveConfig.js';
 import tailwindConfig from './tailwind.config.js';
 
-const { screens } = resolveConfig(tailwindConfig).theme;
+const {
+  theme: { screens },
+} = resolveConfig(tailwindConfig);
 
 /** @type {import('postcss-load-config').Config} */
 export default {
