@@ -17,7 +17,7 @@ const __dirname = path.dirname(__filename);
  */
 const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
   const layers = ['base', 'components', 'utilities'];
-  const stylesDirectoryPath = path.join(__dirname, 'src/styles');
+  const stylesDir = path.join(__dirname, 'src/styles');
   const addStylesMap = {
     base: addBase,
     components: addComponents,
@@ -25,13 +25,13 @@ const cssFiles = plugin(({ addBase, addComponents, addUtilities }) => {
   };
 
   for (const layer of layers) {
-    const layerDirectoryPath = path.join(stylesDirectoryPath, layer);
-    const fileNames = fs.readdirSync(layerDirectoryPath);
+    const layerDir = path.join(stylesDir, layer);
+    const fileNames = fs.readdirSync(layerDir);
     const addStyles = addStylesMap[layer];
 
     for (const fileName of fileNames) {
       if (path.extname(fileName) === '.css') {
-        const filePath = path.join(layerDirectoryPath, fileName);
+        const filePath = path.join(layerDir, fileName);
         const content = fs.readFileSync(filePath, 'utf8');
         const styles = postcss.parse(content);
         addStyles(styles.nodes);
