@@ -50,5 +50,10 @@
   },
   "engines": {
     "node": "22"
+  },
+  "overrides": {
+    "vitest": {
+      "vite": "6"
+    }
   }
 }
