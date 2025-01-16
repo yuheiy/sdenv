@@ -45,7 +45,7 @@
     "prettier-plugin-organize-imports": "4.1.0",
     "prettier-plugin-tailwindcss": "0.6.10",
     "typescript-eslint": "8.20.0",
-    "vitest": "3.0.0-beta.4"
+    "vitest": "3.0.0"
   },
   "engines": {
     "node": "22"
