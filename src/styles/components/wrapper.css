@@ -1,8 +1,0 @@
-.wrapper {
-  box-sizing: content-box;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: max(5vw, theme(spacing.5));
-  padding-left: max(5vw, theme(spacing.5));
-  max-width: 60rem;
-}

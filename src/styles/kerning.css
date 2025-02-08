@@ -6,17 +6,17 @@
  * See: https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571
  */
 
-.kerning-none {
+@utility kerning-none {
   font-kerning: none;
   font-feature-settings: normal;
 }
 
-.kerning-normal {
+@utility kerning-normal {
   font-kerning: normal;
   font-feature-settings: normal;
 }
 
-.kerning-all {
+@utility kerning-all {
   font-kerning: normal;
   font-feature-settings: 'palt';
 }

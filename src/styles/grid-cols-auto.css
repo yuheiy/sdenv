@@ -1,0 +1,12 @@
+/**
+ * Create a responsive grid layout without media queries using CSS Grid.
+ *
+ * This utility is based on a method provided by Andy Bell on piccalil.li.
+ * See: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+ */
+
+@utility grid-cols-auto-* {
+  grid-template-columns: repeat(auto-fill, minmax(min(--spacing(--value(integer)), 100%), 1fr));
+  /* prettier-ignore */
+  grid-template-columns: repeat(auto-fill, minmax(min(--value(--spacing-*), 100%), 1fr));
+}
