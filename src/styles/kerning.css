@@ -18,5 +18,5 @@
 
 @utility kerning-all {
   font-kerning: normal;
-  font-feature-settings: 'palt';
+  font-feature-settings: 'palt', 'vpal';
 }
