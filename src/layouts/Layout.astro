@@ -42,7 +42,10 @@ const resolvedOgImage = new URL(ogImage, Astro.site);
   https://schepp.dev/posts/smooth-scrolling-and-page-search/
 -->
 <html
-  class="bg-white [overflow-wrap:anywhere] text-slate-800 [line-break:normal] kerning-none motion-safe:focus-within:scroll-smooth"
+  class:list={[
+    'bg-white [overflow-wrap:anywhere] text-slate-800 [line-break:normal] kerning-none',
+    'motion-safe:focus-within:scroll-smooth',
+  ]}
   lang={siteLang}
 >
   <head>
