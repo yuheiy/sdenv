@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "3.2.1",
+    "@tailwindcss/node": "4.0.5",
     "@tailwindcss/vite": "4.0.5",
     "alpinejs": "3.14.8",
     "astro": "5.2.5",
