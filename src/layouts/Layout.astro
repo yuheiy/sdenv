@@ -35,13 +35,6 @@ const is404 = Astro.props.is404 === true;
 const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } = Astro.props;
 
 const resolvedOgImage = new URL(ogImage, Astro.site);
-
-const canonicalURL = (() => {
-  if (is404) {
-    return null;
-  }
-  return new URL(Astro.url.pathname, Astro.site);
-})();
 ---
 
 <!--
@@ -79,13 +72,13 @@ const canonicalURL = (() => {
     <meta property="og:title" content={isHome ? Astro.props.tagline : Astro.props.title} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={resolvedOgImage} />
-    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+    {!is404 && <meta property="og:url" content={Astro.url} />}
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:locale" content={`${siteLang}_${siteRegion}`} />
 
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
-    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    {!is404 && <link rel="canonical" href={Astro.url} />}
     <link rel="icon" href={faviconImage.src} type="image/svg+xml" />
   </head>
 
