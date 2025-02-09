@@ -34,7 +34,7 @@ const is404 = Astro.props.is404 === true;
 
 const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } = Astro.props;
 
-const resolvedOgImage = new URL(ogImage, Astro.site);
+const resolvedOgImage = new URL(ogImage, Astro.url);
 ---
 
 <!--
