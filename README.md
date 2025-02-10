@@ -72,12 +72,10 @@ npm run fix
 │   ├── layouts/        # ページの構造を規定するAstroコンポーネント
 │   ├── pages/          # ページのためのAstroコンポーネント
 │   ├── scripts/        # クライアントサイドで利用されるスクリプト
-│   └── styles/         # Tailwind CSSによって読み込まれるCSSファイル
+│   └── styles/         # サイトで利用されるCSSファイル
 ├── astro.config.ts     # Astroの設定
 ├── package.json        # 依存パッケージを管理するための設定
-├── postcss.config.js   # PostCSSの設定
-├── tailwind.config.js  # Tailwind CSSの設定
 └── tsconfig.json       # TypeScriptの設定
 ```
 
-詳しくは、Astro公式ドキュメントの「[Project Structure](https://docs.astro.build/en/core-concepts/project-structure/)」も参照してください。また、大規模なプロジェクトにおいては、[Feature-Sliced Design](https://yuheiy.com/2024-08-17-feature-sliced-design-for-astro)の採用も検討してください。
+詳しくは、Astro公式ドキュメントの「[Project Structure](https://docs.astro.build/en/core-concepts/project-structure/)」も参照してください。また、大規模なプロジェクトにおいては、[featuresディレクトリ](https://github.com/withastro/storefront?tab=readme-ov-file#project-structure)の導入も検討してください。
