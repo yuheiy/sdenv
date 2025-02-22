@@ -6,13 +6,13 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<header class="wrapper pt-[fluid(3rem,5rem)]">
+<header class="wrapper pt-[--fluid(3rem,5rem)]">
   <p class="mb-3 text-sm empty:hidden"><slot /></p>
   <h1
-    class="text-[length:fluid(2rem,3rem)] leading-normal font-bold text-pretty [word-break:auto-phrase] kerning-all"
+    class="text-[length:--fluid(2rem,3rem)] leading-normal font-bold text-pretty [word-break:auto-phrase] kerning-all"
   >
     {title}
   </h1>
 </header>
 
-<div class="my-[fluid(3rem,5rem)] border-t border-slate-200"></div>
+<div class="my-[--fluid(3rem,5rem)] border-t border-slate-200"></div>

@@ -15,7 +15,7 @@ const entries = (await getCollection('blog')).toSorted(
 <Layout title={title} description={description}>
   <Hero title={title} />
 
-  <main class="wrapper space-y-[fluid(3rem,5rem)]">
+  <main class="wrapper space-y-[--fluid(3rem,5rem)]">
     {
       entries.map((entry) => (
         <article>

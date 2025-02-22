@@ -94,9 +94,11 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     }
 
     <nav
-      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid(24rem_0.875rem,sm_1rem)] font-bold text-white"
+      class="sticky top-0 z-10 bg-[#111111] text-[length:--fluid(0.875rem,1rem,24rem,var(--breakpoint-sm))] font-bold text-white"
     >
-      <ul class="wrapper flex max-w-none items-center gap-x-[fluid(24rem_1rem,sm_1.5rem)]">
+      <ul
+        class="wrapper flex max-w-none items-center gap-x-[--fluid(1rem,1.5rem,24rem,var(--breakpoint-sm))]"
+      >
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
@@ -118,7 +120,7 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     <slot />
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer class="sticky top-full mt-[fluid(3rem,5rem)] bg-slate-100 py-4 text-center text-sm">
+    <footer class="sticky top-full mt-[--fluid(3rem,5rem)] bg-slate-100 py-4 text-center text-sm">
       <p class="wrapper">© <span x-data x-text="new Date().getFullYear()"></span> Yuhei Yasuda</p>
     </footer>
 
