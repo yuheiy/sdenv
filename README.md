@@ -26,37 +26,37 @@ sdenvは、これらのツールの使い方を理解していることを前提
 セットアップ:
 
 ```bash
-npm ci
+pnpm install
 ```
 
 ローカルサーバーの起動:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 本番用ビルド:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 自動テスト:
 
 ```bash
-npm run test
+pnpm run test
 ```
 
 ソースコードの静的検証:
 
 ```bash
-npm run lint
+pnpm run lint
 ```
 
 ソースコードの自動修正:
 
 ```bash
-npm run fix
+pnpm run fix
 ```
 
 ## ファイル構成
