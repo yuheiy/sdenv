@@ -9,7 +9,9 @@
 @import './kerning.css';
 
 @layer base {
-  a {
+  *,
+  ::after,
+  ::before {
     text-decoration-thickness: from-font;
   }
 
