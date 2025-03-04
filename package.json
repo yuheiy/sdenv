@@ -11,7 +11,7 @@
     "lint": "astro sync && pnpm run \"/^lint:.*/\"",
     "lint:astro": "astro check",
     "lint:eslint": "eslint --max-warnings 0",
-    "lint:prettier": "prettier . --check",
+    "lint:prettier": "prettier --check .",
     "lint:type-check": "tsc -b",
     "preview": "astro preview",
     "test": "vitest --passWithNoTests"
