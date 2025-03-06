@@ -20,7 +20,7 @@ function fluid(
 
   return `clamp(${[
     `min(${minSize}, ${maxSize})`,
-    `${slope} * 100lvi + ${intercept} / 16 * 1rem`,
+    `${slope} * 100svw + ${intercept} / 16 * 1rem`,
     `max(${minSize}, ${maxSize})`,
   ].join(', ')})`;
 }
