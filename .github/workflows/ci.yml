@@ -24,8 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # https://github.com/actions/setup-node/pull/1149
-          node-version: 22.14.0
+          node-version-file: package.json
           cache: pnpm
 
       - name: Install dependencies
@@ -48,8 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # https://github.com/actions/setup-node/pull/1149
-          node-version: 22.14.0
+          node-version-file: package.json
           cache: pnpm
 
       - name: Install dependencies
@@ -72,8 +70,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # https://github.com/actions/setup-node/pull/1149
-          node-version: 22.14.0
+          node-version-file: package.json
           cache: pnpm
 
       - name: Install dependencies
