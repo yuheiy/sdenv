@@ -13,4 +13,8 @@ export default defineConfig({
     },
     plugins: [tailwindcss()],
   },
+  experimental: {
+    preserveScriptOrder: true,
+    headingIdCompat: true,
+  },
 });
