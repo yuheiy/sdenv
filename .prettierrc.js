@@ -9,6 +9,7 @@ export default {
   printWidth: 100,
   singleQuote: true,
   organizeImportsSkipDestructiveCodeActions: true,
+  tailwindStylesheet: './src/styles/global.css',
   overrides: [
     {
       files: '*.astro',

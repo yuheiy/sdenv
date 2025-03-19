@@ -1,0 +1,6 @@
+.wrapper {
+  box-sizing: content-box;
+  margin-inline: auto;
+  padding-inline: max(5vw, --spacing(5));
+  max-width: 60rem;
+}

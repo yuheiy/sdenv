@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+/* components */
+@import './prose.css' layer(components);
+@import './wrapper.css' layer(components);
+
+/* utilities */
+@import './grid-cols-auto.css';
+@import './kerning.css';
+
+@layer base {
+  /*
+   * Sometimes, when you're using AlpineJS for a part of your template, there is a "blip" where you
+   * might see your uninitialized template after the page loads, but before Alpine loads.
+   * `x-cloak` addresses this scenario by hiding the element it's attached to until Alpine is fully
+   * loaded on the page.
+   *
+   * See: https://alpinejs.dev/directives/cloak
+   */
+  [x-cloak] {
+    display: none !important;
+  }
+}
