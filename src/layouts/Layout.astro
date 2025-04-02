@@ -37,13 +37,10 @@ const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } =
 const resolvedOgImage = new URL(ogImage, Astro.url);
 ---
 
-<!--
-  https://bugs.chromium.org/p/chromium/issues/detail?id=1378462
-  https://schepp.dev/posts/smooth-scrolling-and-page-search/
--->
 <html
   class:list={[
-    'bg-white [overflow-wrap:anywhere] text-slate-800 kerning-none [scrollbar-gutter:stable] [text-autospace:normal]',
+    'bg-white [overflow-wrap:anywhere] text-slate-800 [scrollbar-gutter:stable] [text-autospace:normal]',
+    // https://schepp.dev/posts/smooth-scrolling-and-page-search/
     'motion-safe:focus-within:scroll-smooth',
   ]}
   lang={siteLang}
