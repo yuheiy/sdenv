@@ -1,12 +1,18 @@
+function toPx(length) {
+  return `tan(atan2(${length}, 1px))`;
+}
+
 function fluid(
-  minSize,
-  maxSize,
-  minBreakpoint = 'var(--breakpoint-sm)',
-  maxBreakpoint = 'var(--breakpoint-2xl)',
+  min,
+  max,
+  breakpointMin = 'var(--breakpoint-sm)',
+  breakpointMax = 'var(--breakpoint-2xl)',
   ...rest
 ) {
-  if (!minSize || !maxSize) {
-    throw new Error('The --fluid(…) function requires 2–4 arguments, but received none.');
+  if (!min || !max) {
+    throw new Error(
+      'The --fluid(…) function requires at least 2 arguments, but received insufficient arguments.',
+    );
   }
 
   if (rest.length > 0) {
@@ -15,13 +21,12 @@ function fluid(
     );
   }
 
-  const slope = `calc(tan(atan2(${maxSize} - ${minSize}, 1px)) / tan(atan2(${maxBreakpoint} - ${minBreakpoint}, 1px)))`;
-  const intercept = `calc(tan(atan2(${minSize}, 1px)) - ${slope} * tan(atan2(${minBreakpoint}, 1px)))`;
+  const t = `(${toPx('100svw')} - ${toPx(breakpointMin)}) / (${toPx(breakpointMax)} - ${toPx(breakpointMin)})`;
 
   return `clamp(${[
-    `min(${minSize}, ${maxSize})`,
-    `${slope} * 100svw + ${intercept} / 16 * 1rem`,
-    `max(${minSize}, ${maxSize})`,
+    `min(${min}, ${max})`,
+    `${min} + (${max} - ${min}) * ${t}`,
+    `max(${min}, ${max})`,
   ].join(', ')})`;
 }
 
