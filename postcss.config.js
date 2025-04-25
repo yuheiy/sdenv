@@ -1,15 +1,24 @@
-function toPx(length) {
-  return `tan(atan2(${length}, 1px))`;
+const inputPattern = /^([+-]?[0-9]*\.?[0-9]+)(px|rem)$/;
+
+function parseAsRem(input) {
+  const match = input.match(inputPattern);
+
+  if (!match) {
+    throw new Error(`${input} is an invalid input.`);
+  }
+
+  const [, value, unit] = match;
+  const divider = unit === 'px' ? 16 : 1;
+
+  return Number(value) / divider;
 }
 
-function fluid(
-  min,
-  max,
-  breakpointMin = 'var(--breakpoint-sm)',
-  breakpointMax = 'var(--breakpoint-2xl)',
-  ...rest
-) {
-  if (!min || !max) {
+function round(n) {
+  return Math.round((n + Number.EPSILON) * 10000) / 10000;
+}
+
+function fluid(minSize, maxSize, minBreakpoint = '40rem', maxBreakpoint = '96rem', ...rest) {
+  if (!minSize || !maxSize) {
     throw new Error(
       'The --fluid(…) function requires at least 2 arguments, but received insufficient arguments.',
     );
@@ -21,12 +30,18 @@ function fluid(
     );
   }
 
-  const t = `(${toPx('100svw')} - ${toPx(breakpointMin)}) / (${toPx(breakpointMax)} - ${toPx(breakpointMin)})`;
+  minSize = parseAsRem(minSize);
+  maxSize = parseAsRem(maxSize);
+  minBreakpoint = parseAsRem(minBreakpoint);
+  maxBreakpoint = parseAsRem(maxBreakpoint);
+
+  const slope = (maxSize - minSize) / (maxBreakpoint - minBreakpoint);
+  const intersection = -1 * minBreakpoint * slope + minSize;
 
   return `clamp(${[
-    `min(${min}, ${max})`,
-    `${min} + (${max} - ${min}) * ${t}`,
-    `max(${min}, ${max})`,
+    `${minSize > maxSize ? maxSize : minSize}rem`,
+    `${round(intersection)}rem + ${round(slope * 100)}svw`,
+    `${minSize > maxSize ? minSize : maxSize}rem`,
   ].join(', ')})`;
 }
 
