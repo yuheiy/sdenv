@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs';
-import './components';
-import './stores';
+
+import.meta.glob('./{components,stores}/*.{js,ts,jsx,tsx}', { eager: true });
 
 // https://vitejs.dev/guide/env-and-mode.html#env-variables
 if (import.meta.env.DEV) {
