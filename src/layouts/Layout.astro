@@ -91,11 +91,9 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     }
 
     <nav
-      class="sticky top-0 z-10 bg-[#111111] text-[length:--fluid(0.875rem,1rem,24rem,var(--breakpoint-sm))] font-bold text-white"
+      class="sticky top-0 z-10 bg-[#111111] text-[length:--fluid(0.875rem,1rem,24rem,40rem)] font-bold text-white"
     >
-      <ul
-        class="wrapper flex max-w-none items-center gap-x-[--fluid(1rem,1.5rem,24rem,var(--breakpoint-sm))]"
-      >
+      <ul class="wrapper flex max-w-none items-center gap-x-[--fluid(1rem,1.5rem,24rem,40rem)]">
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
