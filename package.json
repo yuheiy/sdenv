@@ -5,9 +5,9 @@
   "scripts": {
     "build": "astro build",
     "dev": "astro dev",
-    "fix": "pnpm run fix:eslint && pnpm run fix:prettier",
-    "fix:eslint": "pnpm run lint:eslint --fix",
-    "fix:prettier": "pnpm run lint:prettier --write",
+    "fix": "node --run fix:eslint && node --run fix:prettier",
+    "fix:eslint": "node --run lint:eslint -- --fix",
+    "fix:prettier": "node --run lint:prettier -- --write",
     "lint": "astro sync && pnpm run \"/^lint:.*/\"",
     "lint:astro": "astro check",
     "lint:eslint": "eslint --max-warnings 0",
