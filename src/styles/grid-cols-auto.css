@@ -7,6 +7,5 @@
 
 @utility grid-cols-auto-* {
   grid-template-columns: repeat(auto-fill, minmax(min(--spacing(--value(integer)), 100%), 1fr));
-  /* prettier-ignore */
   grid-template-columns: repeat(auto-fill, minmax(min(--value(--spacing-*), 100%), 1fr));
 }
