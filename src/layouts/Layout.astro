@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
-import { siteLang, siteRegion, siteTitle, siteTwitterId } from '../consts';
+import config from '../config';
 import '../styles/global.css';
 
 interface BaseProps {
@@ -43,7 +43,7 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     // https://schepp.dev/posts/smooth-scrolling-and-page-search/
     'motion-safe:focus-within:scroll-smooth',
   ]}
-  lang={siteLang}
+  lang={config.lang}
 >
   <head>
     {
@@ -57,7 +57,7 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     <meta name="viewport" content="width=device-width" />
 
     <title
-      set:html={[!isHome && Astro.props.title, siteTitle, isHome && Astro.props.tagline]
+      set:html={[!isHome && Astro.props.title, config.siteTitle, isHome && Astro.props.tagline]
         .filter(Boolean)
         .join(' &#8211; ')}
     />
@@ -66,16 +66,16 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
 
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={`@${siteTwitterId}`} />
-    <meta name="twitter:title" content={isHome ? siteTitle : Astro.props.title} />
+    <meta name="twitter:site" content={`@${config.twitter}`} />
+    <meta name="twitter:title" content={isHome ? config.siteTitle : Astro.props.title} />
 
     <meta property="og:title" content={isHome ? Astro.props.tagline : Astro.props.title} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={resolvedOgImage} />
     {!is404 && <meta property="og:url" content={Astro.url} />}
     {description && <meta property="og:description" content={description} />}
-    <meta property="og:site_name" content={siteTitle} />
-    <meta property="og:locale" content={`${siteLang}_${siteRegion}`} />
+    <meta property="og:site_name" content={config.siteTitle} />
+    <meta property="og:locale" content={`${config.lang}_${config.region}`} />
 
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {!is404 && <link rel="canonical" href={Astro.url} />}
@@ -97,7 +97,7 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
-            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={siteTitle} />
+            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={config.siteTitle} />
           </a>
         </li>
         <li>
@@ -107,7 +107,7 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
           <a class="block py-2" href="https://github.com/yuheiy/sdenv" target="_blank">GitHub</a>
         </li>
         <li>
-          <a class="block py-2" href={`https://x.com/${siteTwitterId}`} target="_blank">X</a>
+          <a class="block py-2" href={`https://x.com/${config.twitter}`} target="_blank">X</a>
         </li>
       </ul>
     </nav>
