@@ -11,9 +11,15 @@ export default {
   ],
   printWidth: 100,
   singleQuote: true,
+
+  // prettier-plugin-organize-imports
   organizeImportsSkipDestructiveCodeActions: true,
+
+  // prettier-plugin-tailwindcss
   tailwindStylesheet: './src/styles/global.css',
+
   overrides: [
+    // prettier-plugin-astro
     {
       files: '*.astro',
       options: {
