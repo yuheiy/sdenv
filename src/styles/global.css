@@ -7,6 +7,7 @@
 /* utilities */
 @import './grid-cols-auto.css';
 @import './kerning.css';
+@import './transition.css';
 
 @layer base {
   /*
