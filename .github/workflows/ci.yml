@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --prod
 
       - name: Build
-        run: node --run build
+        run: pnpm run build
 
   test:
     name: Test
@@ -59,7 +59,7 @@ jobs:
         run: pnpm install
 
       - name: Test
-        run: node --run test
+        run: pnpm run test
 
   lint:
     name: Lint
@@ -83,4 +83,4 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: node --run lint
+        run: pnpm run lint

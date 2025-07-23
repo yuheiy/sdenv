@@ -32,31 +32,31 @@ pnpm install
 ローカルサーバーの起動:
 
 ```bash
-pnpm dev
+pnpm run dev
 ```
 
 本番用ビルド:
 
 ```bash
-pnpm build
+pnpm run build
 ```
 
 自動テスト:
 
 ```bash
-pnpm test
+pnpm run test
 ```
 
 ソースコードの静的検証:
 
 ```bash
-pnpm lint
+pnpm run lint
 ```
 
 ソースコードの自動修正:
 
 ```bash
-pnpm fix
+pnpm run fix
 ```
 
 ## ファイル構成
