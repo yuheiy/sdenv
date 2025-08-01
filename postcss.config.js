@@ -18,7 +18,13 @@ function fluid() {
     return Math.round((n + Number.EPSILON) * 10000) / 10000;
   }
 
-  return (minSize, maxSize, minBreakpoint = '40rem', maxBreakpoint = '96rem', ...rest) => {
+  return function fluidImpl(
+    minSize,
+    maxSize,
+    minBreakpoint = '40rem',
+    maxBreakpoint = '96rem',
+    ...rest
+  ) {
     if (!minSize || !maxSize) {
       throw new Error(
         'The --fluid(…) function requires at least 2 arguments, but received insufficient arguments.',
