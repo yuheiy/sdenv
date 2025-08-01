@@ -1,3 +1,5 @@
+import type { Config } from 'postcss-load-config';
+
 function fluid() {
   const inputPattern = /^([+-]?[0-9]*\.?[0-9]+)(px|rem)$/;
 
@@ -53,8 +55,7 @@ function fluid() {
   };
 }
 
-/** @type {import('postcss-load-config').Config} */
-export default {
+const config: Config = {
   plugins: {
     '@yuheiy/postcss-custom-functions': {
       functions: {
@@ -63,3 +64,5 @@ export default {
     },
   },
 };
+
+export default config;
