@@ -3,7 +3,7 @@ import type { Config } from 'postcss-load-config';
 function fluid() {
   const inputPattern = /^([+-]?[0-9]*\.?[0-9]+)(px|rem)$/;
 
-  function parseAsRem(input: string): number {
+  function parseAsRem(input: string) {
     const match = input.match(inputPattern);
 
     if (!match) {
@@ -16,7 +16,7 @@ function fluid() {
     return Number(value) / divider;
   }
 
-  function round(n: number): number {
+  function round(n: number) {
     return Math.round((n + Number.EPSILON) * 10000) / 10000;
   }
 
@@ -26,7 +26,7 @@ function fluid() {
     minBreakpoint = '40rem',
     maxBreakpoint = '96rem',
     ...rest: unknown[]
-  ): string {
+  ) {
     if (!minSize || !maxSize) {
       throw new Error(
         'The --fluid(…) function requires at least 2 arguments, but received insufficient arguments.',
@@ -48,9 +48,9 @@ function fluid() {
     const intersection = -1 * minBreakpointRem * slope + minSizeRem;
 
     return `clamp(${[
-      `${minSizeRem > maxSizeRem ? maxSizeRem : minSizeRem}rem`,
+      `${Math.min(minSizeRem, maxSizeRem)}rem`,
       `${round(intersection)}rem + ${round(slope * 100)}svw`,
-      `${minSizeRem > maxSizeRem ? minSizeRem : maxSizeRem}rem`,
+      `${Math.max(minSizeRem, maxSizeRem)}rem`,
     ].join(', ')})`;
   };
 }
