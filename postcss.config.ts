@@ -1,7 +1,7 @@
 function fluid() {
   const inputPattern = /^([+-]?[0-9]*\.?[0-9]+)(px|rem)$/;
 
-  function parseAsRem(input) {
+  function parseAsRem(input: string): number {
     const match = input.match(inputPattern);
 
     if (!match) {
@@ -14,17 +14,17 @@ function fluid() {
     return Number(value) / divider;
   }
 
-  function round(n) {
+  function round(n: number): number {
     return Math.round((n + Number.EPSILON) * 10000) / 10000;
   }
 
   return function fluidImpl(
-    minSize,
-    maxSize,
+    minSize: string,
+    maxSize: string,
     minBreakpoint = '40rem',
     maxBreakpoint = '96rem',
-    ...rest
-  ) {
+    ...rest: unknown[]
+  ): string {
     if (!minSize || !maxSize) {
       throw new Error(
         'The --fluid(…) function requires at least 2 arguments, but received insufficient arguments.',
@@ -37,18 +37,18 @@ function fluid() {
       );
     }
 
-    minSize = parseAsRem(minSize);
-    maxSize = parseAsRem(maxSize);
-    minBreakpoint = parseAsRem(minBreakpoint);
-    maxBreakpoint = parseAsRem(maxBreakpoint);
+    const minSizeRem = parseAsRem(minSize);
+    const maxSizeRem = parseAsRem(maxSize);
+    const minBreakpointRem = parseAsRem(minBreakpoint);
+    const maxBreakpointRem = parseAsRem(maxBreakpoint);
 
-    const slope = (maxSize - minSize) / (maxBreakpoint - minBreakpoint);
-    const intersection = -1 * minBreakpoint * slope + minSize;
+    const slope = (maxSizeRem - minSizeRem) / (maxBreakpointRem - minBreakpointRem);
+    const intersection = -1 * minBreakpointRem * slope + minSizeRem;
 
     return `clamp(${[
-      `${minSize > maxSize ? maxSize : minSize}rem`,
+      `${minSizeRem > maxSizeRem ? maxSizeRem : minSizeRem}rem`,
       `${round(intersection)}rem + ${round(slope * 100)}svw`,
-      `${minSize > maxSize ? minSize : maxSize}rem`,
+      `${minSizeRem > maxSizeRem ? minSizeRem : maxSizeRem}rem`,
     ].join(', ')})`;
   };
 }
