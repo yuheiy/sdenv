@@ -39,7 +39,7 @@
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-organize-imports": "^4.2.0",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "typescript": "^5.8.3",
+    "typescript": "~5.8.3",
     "typescript-eslint": "^8.38.0",
     "vitest": "^3.2.4"
   },
