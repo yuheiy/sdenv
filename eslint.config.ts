@@ -8,8 +8,8 @@ export default tseslint.config(
 
   eslint.configs.recommended,
 
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.stylistic,
+  tseslint.configs.recommended,
+  tseslint.configs.stylistic,
   {
     rules: {
       // TypeScript already catches unused variables
@@ -17,5 +17,5 @@ export default tseslint.config(
     },
   },
 
-  ...astro.configs['flat/jsx-a11y-recommended'],
+  astro.configs['flat/jsx-a11y-recommended'],
 );
