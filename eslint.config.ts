@@ -1,15 +1,15 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
 import astro from 'eslint-plugin-astro';
-import { defineConfig, globalIgnores } from 'eslint/config';
-import ts from 'typescript-eslint';
+import { globalIgnores } from 'eslint/config';
+import tseslint from 'typescript-eslint';
 
-export default defineConfig([
+export default tseslint.config(
   globalIgnores(['.astro/', 'dist/']),
 
-  js.configs.recommended,
+  eslint.configs.recommended,
 
-  ...ts.configs.recommended,
-  ...ts.configs.stylistic,
+  ...tseslint.configs.recommended,
+  ...tseslint.configs.stylistic,
   {
     rules: {
       // TypeScript already catches unused variables
@@ -18,4 +18,4 @@ export default defineConfig([
   },
 
   ...astro.configs['flat/jsx-a11y-recommended'],
-]);
+);
