@@ -1,4 +1,10 @@
+engineStrict: true
+
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild
   - sharp
+
+strictDepBuilds: true
+
+strictPeerDependencies: true
