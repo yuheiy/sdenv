@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # https://github.com/actions/setup-node/issues/1255
-          node-version: ^22.18.0
+          node-version: ^22.19.0
           cache: pnpm
 
       - name: Install dependencies
@@ -53,7 +53,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # https://github.com/actions/setup-node/issues/1255
-          node-version: ^22.18.0
+          node-version: ^22.19.0
           cache: pnpm
 
       - name: Install dependencies

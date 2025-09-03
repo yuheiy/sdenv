@@ -1,11 +1,11 @@
 import eslint from '@eslint/js';
 import astro from 'eslint-plugin-astro';
 import betterTailwindcss from 'eslint-plugin-better-tailwindcss';
-import { globalIgnores } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import prettierConfig from './prettier.config.js';
 
-export default tseslint.config(
+export default defineConfig(
   globalIgnores(['.astro/', 'dist/']),
 
   eslint.configs.recommended,
