@@ -39,7 +39,11 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
 
 <html
   class:list={[
-    'bg-white wrap-anywhere text-slate-800 [scrollbar-gutter:stable] [text-autospace:normal]',
+    `
+      bg-white wrap-anywhere text-slate-800
+      [scrollbar-gutter:stable]
+      [text-autospace:normal]
+    `,
     // https://schepp.dev/posts/smooth-scrolling-and-page-search/
     'motion-safe:focus-within:scroll-smooth',
   ]}
@@ -91,7 +95,11 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     }
 
     <nav
-      class="sticky top-0 z-10 bg-[#111111] text-[length:--fluid(0.875rem,1rem,24rem,40rem)] font-bold text-white"
+      class={`
+        sticky top-0 z-10 bg-[#111111]
+        text-[length:--fluid(0.875rem,1rem,24rem,40rem)]
+        font-bold text-white
+      `}
     >
       <ul class="wrapper flex max-w-none items-center gap-x-[--fluid(1rem,1.5rem,24rem,40rem)]">
         <li class="mr-auto">

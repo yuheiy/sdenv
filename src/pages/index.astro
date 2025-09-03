@@ -47,19 +47,38 @@ const developmentStacks = [
       />
     </h1>
     <p
-      class="mt-[--fluid(1.25rem,2.5rem)] text-center text-[length:--fluid(1rem,1.5rem)] font-bold text-pretty [word-break:auto-phrase] kerning-all"
+      class={`
+        mt-[--fluid(1.25rem,2.5rem)] text-center
+        text-[length:--fluid(1rem,1.5rem)]
+        font-bold text-pretty
+        [word-break:auto-phrase]
+        kerning-all
+      `}
     >
       {tagline}
     </p>
   </header>
 
   <main class="wrapper mb-[--fluid(4rem,10rem)] max-w-[90rem]">
-    <div class="flex flex-col items-center gap-4 lg:flex-row" role="list">
+    <div
+      class={`
+        flex flex-col items-center gap-4
+        lg:flex-row
+      `}
+      role="list"
+    >
       {
         developmentStacks.map(({ image, link, label }, i) => (
           <>
             {i > 0 && (
-              <Image class="size-10 lg:mb-5" src={import('../assets/home/cross.svg')} alt="×" />
+              <Image
+                class={`
+                  size-10
+                  lg:mb-5
+                `}
+                src={import('../assets/home/cross.svg')}
+                alt="×"
+              />
             )}
             <div class="w-full rounded-xl border border-slate-300" role="listitem">
               <p>
@@ -67,7 +86,11 @@ const developmentStacks = [
                   <Image class="w-full rounded-t-xl" {...image} />
                 </a>
               </p>
-              <p class="rounded-b-xl border-t border-slate-300 bg-slate-50 px-4 py-2 text-center font-bold">
+              <p
+                class={`
+                  rounded-b-xl border-t border-slate-300 bg-slate-50 px-4 py-2 text-center font-bold
+                `}
+              >
                 {label}
               </p>
             </div>
