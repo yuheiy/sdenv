@@ -1,6 +1,6 @@
 import eslint from '@eslint/js';
 import astro from 'eslint-plugin-astro';
-import tailwindcss from 'eslint-plugin-better-tailwindcss';
+import betterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import { globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import prettierConfig from './prettier.config.js';
@@ -23,10 +23,10 @@ export default tseslint.config(
 
   {
     plugins: {
-      'better-tailwindcss': tailwindcss,
+      'better-tailwindcss': betterTailwindcss,
     },
     rules: {
-      ...tailwindcss.configs.recommended.rules,
+      ...betterTailwindcss.configs.recommended.rules,
       'better-tailwindcss/enforce-consistent-line-wrapping': [
         'warn',
         {
