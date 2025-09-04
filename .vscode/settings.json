@@ -6,8 +6,6 @@
   },
   // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode#default-formatter
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // https://github.com/tailwindlabs/prettier-plugin-tailwindcss/issues/33#issuecomment-1025156688
-  "editor.wordWrap": "on",
 
   /* Text Editor > Formatting */
   "editor.formatOnSave": true,
