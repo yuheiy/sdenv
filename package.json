@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "fix": "node --run fix:eslint && node --run fix:prettier",
     "fix:eslint": "node --run lint:eslint -- --fix",
-    "fix:prettier": "node --run lint:prettier -- --write",
+    "fix:prettier": "prettier --write .",
     "lint": "astro sync && pnpm run \"/^lint:.*/\"",
     "lint:astro": "astro check",
     "lint:eslint": "eslint --max-warnings 0",
