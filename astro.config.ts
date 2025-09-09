@@ -11,7 +11,10 @@ export default defineConfig({
     define: {
       'import.meta.vitest': 'undefined',
     },
-    plugins: [tailwindcss()],
+    plugins: [
+      // @ts-expect-error tailwindcss cause type errors
+      tailwindcss(),
+    ],
   },
   experimental: {
     preserveScriptOrder: true,
