@@ -1,0 +1,14 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": {
+      "label": "Application"
+    }
+  },
+  "postCreateCommand": "pnpm install",
+  "postAttachCommand": {
+    "server": "pnpm run dev --host"
+  },
+  "waitFor": "postCreateCommand"
+}
