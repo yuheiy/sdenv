@@ -2,16 +2,22 @@ name: CI
 
 on:
   push:
+    branches:
+      - main
   pull_request:
-  workflow_dispatch:
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -26,15 +32,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          # https://github.com/actions/setup-node/issues/1255
-          node-version: ^22.20.0
+          node-version: lts/*
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --prod
+        run: pnpm install
 
-      - name: Build
-        run: pnpm run build
+      - name: Lint
+        run: pnpm run lint
 
   test:
     name: Test
@@ -52,38 +57,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          # https://github.com/actions/setup-node/issues/1255
-          node-version: ^22.20.0
+          node-version: lts/*
           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Build
+        run: pnpm run build
 
       - name: Test
         run: pnpm run test
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-        with:
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          # https://github.com/actions/setup-node/issues/1255
-          node-version: ^22.20.0
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm run lint
