@@ -1,7 +1,0 @@
-.prose {
-  line-height: 1.7;
-
-  > :where(* + *) {
-    margin-top: --spacing(4);
-  }
-}

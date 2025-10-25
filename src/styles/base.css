@@ -1,0 +1,8 @@
+/*
+  `x-cloak` prevents the brief "blip" of uninitialized AlpineJS templates by hiding the element
+  with CSS until Alpine fully loads. (https://alpinejs.dev/directives/cloak)
+*/
+
+[x-cloak] {
+  display: none !important;
+}
