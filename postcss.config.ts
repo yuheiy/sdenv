@@ -1,6 +1,6 @@
 import type { Config } from 'postcss-load-config';
 
-function fluid() {
+function createFluid() {
   const inputPattern = /^([+-]?[0-9]*\.?[0-9]+)(px|rem)$/;
 
   function parseAsRem(input: string) {
@@ -20,14 +20,25 @@ function fluid() {
     return Math.round((n + Number.EPSILON) * 10000) / 10000;
   }
 
-  return function fluidImpl(
-    minSize: string,
-    maxSize: string,
-    minBreakpoint = '40rem',
-    maxBreakpoint = '96rem',
+  function fluidImpl(min: number, max: number, minViewport: number, maxViewport: number) {
+    const slope = (max - min) / (maxViewport - minViewport);
+    const intercept = min - slope * minViewport;
+
+    return `clamp(${[
+      `${Math.min(min, max)}rem`,
+      `${round(intercept)}rem + ${round(slope * 100)}lvw`,
+      `${Math.max(min, max)}rem`,
+    ].join(', ')})`;
+  }
+
+  return function fluid(
+    min: string,
+    max: string,
+    minViewport = '40rem',
+    maxViewport = '80rem',
     ...rest: unknown[]
   ) {
-    if (!minSize || !maxSize) {
+    if (!min || !max) {
       throw new Error(
         'The --fluid(…) function requires at least 2 arguments, but received insufficient arguments.',
       );
@@ -39,19 +50,12 @@ function fluid() {
       );
     }
 
-    const minSizeRem = parseAsRem(minSize);
-    const maxSizeRem = parseAsRem(maxSize);
-    const minBreakpointRem = parseAsRem(minBreakpoint);
-    const maxBreakpointRem = parseAsRem(maxBreakpoint);
+    const minAsRem = parseAsRem(min);
+    const maxAsRem = parseAsRem(max);
+    const minViewportAsRem = parseAsRem(minViewport);
+    const maxViewportAsRem = parseAsRem(maxViewport);
 
-    const slope = (maxSizeRem - minSizeRem) / (maxBreakpointRem - minBreakpointRem);
-    const intersection = -1 * minBreakpointRem * slope + minSizeRem;
-
-    return `clamp(${[
-      `${Math.min(minSizeRem, maxSizeRem)}rem`,
-      `${round(intersection)}rem + ${round(slope * 100)}svw`,
-      `${Math.max(minSizeRem, maxSizeRem)}rem`,
-    ].join(', ')})`;
+    return fluidImpl(minAsRem, maxAsRem, minViewportAsRem, maxViewportAsRem);
   };
 }
 
@@ -59,7 +63,7 @@ const config: Config = {
   plugins: {
     '@yuheiy/postcss-custom-functions': {
       functions: {
-        '--fluid': fluid(),
+        '--fluid': createFluid(),
       },
     },
   },
