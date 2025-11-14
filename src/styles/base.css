@@ -1,8 +1,46 @@
-/*
-  `x-cloak` prevents the brief "blip" of uninitialized AlpineJS templates by hiding the element
-  with CSS until Alpine fully loads. (https://alpinejs.dev/directives/cloak)
-*/
+html {
+  background-color: var(--color-white);
+  scrollbar-gutter: stable;
+  color: var(--color-slate-800);
+  text-autospace: normal;
+  overflow-wrap: anywhere;
+  text-spacing-trim: trim-start;
 
+  /*
+   * Apply smooth scrolling only when the page has focus.
+   * Browser find-in-page (Ctrl+F) removes focus, keeping search result navigation instant.
+   * (https://schepp.dev/posts/smooth-scrolling-and-page-search/)
+   */
+  &:focus-within {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/*
+ * Disable automatic spacing insertion for code blocks and input fields.
+ * Precise character positioning is critical for these elements.
+ * (https://hail2u.net/blog/best-value-for-text-autospace-property.html)
+ */
+:is(pre, input, textarea) {
+  text-autospace: no-autospace;
+}
+
+/*
+ * Disable spacing trimming around Japanese punctuation for pre elements.
+ * `text-spacing-trim` trims spacing by default, but this causes character misalignment in
+ * monospace fonts, so we explicitly disable it.
+ * (https://hail2u.net/blog/text-spacing-trim-property-and-pre-element.html)
+ */
+pre {
+  text-spacing-trim: space-all;
+}
+
+/*
+ * `x-cloak` prevents the brief "blip" of uninitialized AlpineJS templates by hiding the element
+ * with CSS until Alpine fully loads. (https://alpinejs.dev/directives/cloak)
+ */
 [x-cloak] {
   display: none !important;
 }

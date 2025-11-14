@@ -1,18 +1,16 @@
 /*
-  Create a responsive grid layout without media queries using CSS Grid.
-  (https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/)
-*/
-
+ * Create a responsive grid layout without media queries using CSS Grid.
+ * (https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/)
+ */
 @utility grid-cols-auto-* {
   grid-template-columns: repeat(auto-fill, minmax(min(--spacing(--value(integer)), 100%), 1fr));
   grid-template-columns: repeat(auto-fill, minmax(min(--value(--spacing-*), 100%), 1fr));
 }
 
 /*
-  Handle font kerning based on a method described in a CSS Working Group Drafts issue.
-  (https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571)
-*/
-
+ * Handle font kerning based on a method described in a CSS Working Group Drafts issue.
+ * (https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571)
+ */
 @utility kerning-none {
   font-kerning: none;
   font-feature-settings: normal;
@@ -29,10 +27,9 @@
 }
 
 /*
-  Exclude `outline-color` property from `transition-property` property.
-  (https://yuheiy.com/2025-07-21-workaround-for-unintended-transition-of-outline-color-in-tailwindcss4)
-*/
-
+ * Exclude `outline-color` property from `transition-property` property.
+ * (https://yuheiy.com/2025-07-21-workaround-for-unintended-transition-of-outline-color-in-tailwindcss4)
+ */
 @utility transition {
   /* prettier-ignore */
   transition-property:
