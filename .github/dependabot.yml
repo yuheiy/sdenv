@@ -7,6 +7,23 @@ updates:
       default-days: 7
     schedule:
       interval: 'daily'
+    groups:
+      astro:
+        patterns:
+          - 'astro'
+          - '@astrojs/*'
+      eslint:
+        patterns:
+          - 'eslint'
+          - '@eslint/*'
+      tailwindcss:
+        patterns:
+          - 'tailwindcss'
+          - '@tailwindcss/*'
+      typescript-eslint:
+        patterns:
+          - 'typescript-eslint'
+          - '@typescript-eslint/*'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
