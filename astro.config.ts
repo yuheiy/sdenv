@@ -16,6 +16,9 @@ export default defineConfig({
       tailwindcss(),
     ],
   },
+  devToolbar: {
+    enabled: false,
+  },
   experimental: {
     preserveScriptOrder: true,
     headingIdCompat: true,
