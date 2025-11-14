@@ -1,8 +1,0 @@
-{
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-  "forwardPorts": [4321],
-  "features": {},
-  "postCreateCommand": "pnpm install",
-  "postAttachCommand": "pnpm run dev --host",
-  "waitFor": "postCreateCommand"
-}
