@@ -8,6 +8,10 @@ updates:
     schedule:
       interval: 'daily'
     groups:
+      alpinejs:
+        patterns:
+          - alpinejs
+          - '@types/alpinejs'
       astro:
         patterns:
           - 'astro'
