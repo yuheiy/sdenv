@@ -1,13 +1,4 @@
 /*
- * Create a responsive grid layout without media queries using CSS Grid.
- * (https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/)
- */
-@utility grid-cols-auto-* {
-  grid-template-columns: repeat(auto-fill, minmax(min(--spacing(--value(integer)), 100%), 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(min(--value(--spacing-*), 100%), 1fr));
-}
-
-/*
  * Handle font kerning based on a method described in a CSS Working Group Drafts issue.
  * (https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571)
  */

@@ -1,5 +1,29 @@
 import type { Config } from 'postcss-load-config';
 
+
+/**
+ * Creates responsive grid columns.
+ * (https://every-layout.dev/layouts/grid/)
+ *
+ * @example grid-template-columns: --auto-grid(250px);
+ * @output grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+ */
+function autoGrid(minWidth: string, ...rest: string[]) {
+  if (!minWidth) {
+    throw new Error(
+      'The --auto-grid(…) function requires 1 argument, but none was provided.',
+    );
+  }
+
+  if (rest.length > 0) {
+    throw new Error(
+      `The --auto-grid(…) function only accepts 1 argument, but received ${rest.length + 1}.`,
+    );
+  }
+
+  return `repeat(auto-fill, minmax(min(${minWidth}, 100%), 1fr))`;
+}
+
 function createFluid() {
   const inputPattern = /^([+-]?[0-9]*\.?[0-9]+)(px|rem)$/;
 
@@ -31,6 +55,13 @@ function createFluid() {
     ].join(', ')})`;
   }
 
+  /**
+   * Creates fluid typography that scales with viewport.
+   * (https://github.com/sindresorhus/css-extras/blob/v0.4.0/index.css#L295-L311)
+   *
+   * @example font-size: --fluid(16px, 24px, 320px, 1280px);
+   * @output Scales from 16px at 320px viewport to 24px at 1280px viewport
+   */
   return function fluid(
     min: string,
     max: string,
@@ -46,7 +77,7 @@ function createFluid() {
 
     if (rest.length > 0) {
       throw new Error(
-        `The --fluid(…) function only accepts 4 arguments, but received ${rest.length + 1}.`,
+        `The --fluid(…) function only accepts 4 arguments, but received ${rest.length + 4}.`,
       );
     }
 
@@ -63,6 +94,7 @@ const config: Config = {
   plugins: {
     '@yuheiy/postcss-custom-functions': {
       functions: {
+        '--auto-grid': autoGrid,
         '--fluid': createFluid(),
       },
     },
