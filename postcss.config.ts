@@ -1,6 +1,5 @@
 import type { Config } from 'postcss-load-config';
 
-
 /**
  * Creates responsive grid columns.
  * (https://every-layout.dev/layouts/grid/)
@@ -10,9 +9,7 @@ import type { Config } from 'postcss-load-config';
  */
 function autoGrid(minWidth: string, ...rest: string[]) {
   if (!minWidth) {
-    throw new Error(
-      'The --auto-grid(…) function requires 1 argument, but none was provided.',
-    );
+    throw new Error('The --auto-grid(…) function requires 1 argument, but none was provided.');
   }
 
   if (rest.length > 0) {
