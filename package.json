@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "@yuheiy/postcss-custom-functions": "^0.1.1",
     "alpinejs": "^3.15.2",
-    "astro": "^5.16.3",
+    "astro": "^5.16.5",
     "astro-icon": "^1.1.5",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.17",
@@ -31,17 +31,17 @@
     "@eslint/js": "^9.39.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@types/alpinejs": "^3.13.11",
-    "@typescript-eslint/parser": "^8.48.1",
+    "@typescript-eslint/parser": "^8.49.0",
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
-    "eslint-plugin-better-tailwindcss": "^3.7.11",
+    "eslint-plugin-better-tailwindcss": "^3.8.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "postcss-load-config": "^6.0.1",
-    "prettier": "^3.7.3",
+    "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-css-order": "^2.1.2",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.48.1",
+    "typescript-eslint": "^8.49.0",
     "vitest": "^4.0.15"
   },
   "devEngines": {
@@ -51,5 +51,5 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@10.25.0"
 }

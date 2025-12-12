@@ -34,11 +34,8 @@ export default defineConfig(
         },
       ],
       'better-tailwindcss/no-unregistered-classes': [
-        'warn',
+        'error',
         {
-          // detectComponentClassesでは `@import '...' layer(components);` で指定したファイルが読み込めないため、ignoreに指定する
-          // https://github.com/schoero/eslint-plugin-better-tailwindcss/issues/171#issuecomment-3075495146
-          ignore: ['^prose$', '^wrapper$'],
           detectComponentClasses: true,
         },
       ],
