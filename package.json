@@ -42,7 +42,7 @@
     "prettier-plugin-css-order": "^2.1.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.49.0",
-    "vitest": "^4.0.15"
+    "vitest": "^4.0.16"
   },
   "devEngines": {
     "runtime": {
