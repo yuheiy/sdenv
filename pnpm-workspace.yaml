@@ -9,9 +9,3 @@ onlyBuiltDependencies:
 strictDepBuilds: true
 
 strictPeerDependencies: true
-
-trustPolicy: no-downgrade
-
-trustPolicyExclude:
-  - chokidar@4.0.3
-  - vite@6.4.1
