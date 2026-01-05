@@ -31,7 +31,7 @@
     "@eslint/js": "^9.39.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@types/alpinejs": "^3.13.11",
-    "@typescript-eslint/parser": "^8.50.1",
+    "@typescript-eslint/parser": "^8.51.0",
     "eslint": "^9.39.1",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-better-tailwindcss": "^3.8.0",
@@ -39,9 +39,9 @@
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-css-order": "^2.2.0",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.50.1",
+    "typescript-eslint": "^8.51.0",
     "vitest": "^4.0.16"
   },
   "devEngines": {
@@ -51,5 +51,5 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.27.0"
 }
