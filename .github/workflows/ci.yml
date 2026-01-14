@@ -40,7 +40,7 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm run lint
+        run: pnpm run lint-all
 
   test:
     name: Test

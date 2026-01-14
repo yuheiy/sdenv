@@ -26,7 +26,6 @@ sdenvは、これらのツールの使い方を理解していることを前提
 セットアップ:
 
 ```bash
-npm install -g pnpm
 pnpm install
 ```
 
@@ -51,13 +50,13 @@ pnpm run test
 ソースコードの静的検証:
 
 ```bash
-pnpm run lint
+pnpm run lint-all
 ```
 
 ソースコードの自動修正:
 
 ```bash
-pnpm run fix
+pnpm run fix-all
 ```
 
 ## ファイル構成
