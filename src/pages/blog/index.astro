@@ -25,12 +25,7 @@ const entries = (await getCollection('blog')).toSorted(
                 {dateFormatter.format(entry.data.pubDate)}
               </time>
             </p>
-            <h2
-              class={`
-                mt-3 text-xl font-bold
-                [word-break:auto-phrase]
-              `}
-            >
+            <h2 class={`mt-3 text-xl font-bold [word-break:auto-phrase]`}>
               <a class="text-sky-700 underline" href={`/blog/${entry.slug}/`}>
                 {entry.data.title}
               </a>

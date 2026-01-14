@@ -22,18 +22,16 @@ export default defineConfig(
   astro.configs['flat/jsx-a11y-recommended'],
 
   {
-    plugins: {
-      'better-tailwindcss': betterTailwindcss,
-    },
+    extends: [betterTailwindcss.configs.recommended as never],
     rules: {
-      ...betterTailwindcss.configs.recommended.rules,
       'better-tailwindcss/enforce-consistent-line-wrapping': [
         'warn',
         {
           printWidth: prettierConfig.printWidth,
         },
       ],
-      'better-tailwindcss/no-unregistered-classes': [
+      'better-tailwindcss/enforce-consistent-variable-syntax': 'off',
+      'better-tailwindcss/no-unknown-classes': [
         'error',
         {
           detectComponentClasses: true,
