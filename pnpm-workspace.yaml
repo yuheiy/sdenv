@@ -1,11 +1,17 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+blockExoticSubdeps: true
+
 engineStrict: true
 
-minimumReleaseAge: 1440
-
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
+minimumReleaseAge: 1440 # At least a day
 
 strictDepBuilds: true
 
 strictPeerDependencies: true
+
+trustPolicy: no-downgrade
+
+trustPolicyIgnoreAfter: 10080 # 1 week
