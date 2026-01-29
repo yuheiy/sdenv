@@ -15,3 +15,5 @@ strictPeerDependencies: true
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 10080 # 1 week
+
+verifyDepsBeforeRun: install
