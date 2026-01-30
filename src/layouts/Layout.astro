@@ -50,9 +50,10 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
     <meta name="viewport" content="width=device-width" />
 
     <title
-      set:html={[!isHome && Astro.props.title, config.siteTitle, isHome && Astro.props.tagline]
-        .filter(Boolean)
-        .join(' &#8211; ')}
+      set:html={(isHome
+        ? [config.siteTitle, Astro.props.tagline]
+        : [Astro.props.title, config.siteTitle]
+      ).join(' &#8211; ')}
     />
 
     <script src="../scripts/main.ts"></script>
