@@ -1,4 +1,4 @@
-html {
+:root {
   background-color: var(--color-white);
   scrollbar-gutter: stable;
   color: var(--color-slate-800);
