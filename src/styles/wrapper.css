@@ -1,13 +1,3 @@
-/* Prose */
-.prose {
-  line-height: 1.7;
-
-  > :where(* + *) {
-    margin-top: --spacing(4);
-  }
-}
-
-/* Wrapper */
 .wrapper {
   box-sizing: content-box;
   margin-inline: auto;

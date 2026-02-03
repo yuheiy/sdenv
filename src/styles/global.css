@@ -1,6 +1,95 @@
 @import 'tailwindcss';
 
-@import './theme.css' layer(theme);
-@import './base.css' layer(base);
-@import './components.css' layer(components);
-@import './utilities.css';
+@theme {
+  /* Input your theme variables... */
+}
+
+@layer base {
+  :root {
+    background-color: var(--color-white);
+    scrollbar-gutter: stable;
+    color: var(--color-slate-800);
+    text-autospace: normal;
+    overflow-wrap: anywhere;
+    text-spacing-trim: trim-start;
+
+    /*
+     * Apply smooth scrolling only when the page has focus.
+     * Browser find-in-page (Ctrl+F) removes focus, keeping search result navigation instant.
+     * (https://schepp.dev/posts/smooth-scrolling-and-page-search/)
+     */
+    &:focus-within {
+      @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+      }
+    }
+  }
+
+  /*
+   * Disable automatic spacing insertion for code blocks and input fields.
+   * Precise character positioning is critical for these elements.
+   * (https://hail2u.net/blog/best-value-for-text-autospace-property.html)
+   */
+  :is(pre, input, textarea) {
+    text-autospace: no-autospace;
+  }
+
+  /*
+   * Disable spacing trimming around Japanese punctuation for pre elements.
+   * `text-spacing-trim` trims spacing by default, but this causes character misalignment in
+   * monospace fonts, so we explicitly disable it.
+   * (https://hail2u.net/blog/text-spacing-trim-property-and-pre-element.html)
+   */
+  pre {
+    text-spacing-trim: space-all;
+  }
+
+  /*
+   * `x-cloak` prevents the brief "blip" of uninitialized AlpineJS templates by hiding the element
+   * with CSS until Alpine fully loads. (https://alpinejs.dev/directives/cloak)
+   */
+  [x-cloak] {
+    display: none !important;
+  }
+}
+
+/*
+ * Handle font kerning based on a method described in a CSS Working Group Drafts issue.
+ * (https://github.com/w3c/csswg-drafts/issues/6723#issuecomment-1411487571)
+ */
+@utility kerning-none {
+  font-kerning: none;
+  font-feature-settings: normal;
+}
+
+@utility kerning-normal {
+  font-kerning: normal;
+  font-feature-settings: normal;
+}
+
+@utility kerning-all {
+  font-kerning: normal;
+  font-feature-settings: 'palt';
+}
+
+/*
+ * Exclude `outline-color` property from `transition-property` property.
+ * (https://yuheiy.com/2025-07-21-workaround-for-unintended-transition-of-outline-color-in-tailwindcss4)
+ */
+@utility transition {
+  /* prettier-ignore */
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from,
+    --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
+    filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay,
+    pointer-events;
+}
+
+@utility transition-colors {
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from,
+    --tw-gradient-via, --tw-gradient-to;
+}
+
+@import './prose.css' layer(components);
+@import './wrapper.css' layer(components);
