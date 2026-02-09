@@ -18,8 +18,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(postcss@8.5.6)
       alpinejs:
-        specifier: ^3.15.5
-        version: 3.15.5
+        specifier: ^3.15.7
+        version: 3.15.7
       astro:
         specifier: ^5.16.15
         version: 5.16.15(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.57.0)(typescript@5.9.3)(yaml@2.8.2)
@@ -1284,8 +1284,8 @@ packages:
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
 
-  alpinejs@3.15.5:
-    resolution: {integrity: sha512-l1R4em/uCUr7eJimcO/b0L1+H2tVcB1Y7cQ3d+pzwVnv0zWs7gw4MhwdsLjfLccWV2iH0ahlfaJWitNRFOZdvQ==}
+  alpinejs@3.15.7:
+    resolution: {integrity: sha512-Faj5HyivYDb1NM+AIA1XVpWMofLC9l2Bt5TXbuAsg+CoEgYXf7yLDdrFygb4W6g0AZha6cSjAu7fMgkc50PIsQ==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -3171,6 +3171,7 @@ packages:
   tar@7.5.6:
     resolution: {integrity: sha512-xqUeu2JAIJpXyvskvU3uvQW8PAmHrtXp2KDuMJwQqW8Sqq0CaZBAQ+dKS3RBXVhU4wC5NjAdKrmh84241gO9cA==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   tiny-inflate@1.0.3:
     resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==}
@@ -4805,7 +4806,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  alpinejs@3.15.5:
+  alpinejs@3.15.7:
     dependencies:
       '@vue/reactivity': 3.1.5
 
