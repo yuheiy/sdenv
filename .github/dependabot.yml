@@ -7,6 +7,11 @@ updates:
       default-days: 7
     schedule:
       interval: 'daily'
+    ignore:
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@eslint/*'
+        update-types: ['version-update:semver-major']
     groups:
       alpinejs:
         patterns:
