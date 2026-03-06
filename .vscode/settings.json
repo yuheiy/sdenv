@@ -34,7 +34,7 @@
   "tailwindCSS.emmetCompletions": true,
 
   /* Extensions > TypeScript */
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
 
   /* Extensions > ESLint */
   // https://github.com/ota-meshi/eslint-plugin-astro?tab=readme-ov-file#visual-studio-code
