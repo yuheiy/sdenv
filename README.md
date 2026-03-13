@@ -21,42 +21,42 @@ sdenvは、これらのツールの使い方を理解していることを前提
 - [htmx](https://htmx.org/): サーバーとのインタラクションをHTML属性として記述できるようにするライブラリ
 - [The AHA Stack](https://ahastack.dev/): Astro、htmx、Alpine.jsを組み合わせてウェブアプリケーションを構築するためのガイド
 
-## コマンドラインインターフェース
+## コマンド
 
-セットアップ:
+依存関係のインストール:
 
 ```bash
 pnpm install
 ```
 
-ローカルサーバーの起動:
+開発サーバーの起動:
 
 ```bash
 pnpm run dev
 ```
 
-本番用ビルド:
+ソースコードの静的解析:
 
 ```bash
-pnpm run build
+pnpm run check
 ```
 
-自動テスト:
+ソースコードの静的解析および自動修正:
+
+```bash
+pnpm run check:fix
+```
+
+テストの実行:
 
 ```bash
 pnpm run test
 ```
 
-ソースコードの静的検証:
+プロダクションビルド:
 
 ```bash
-pnpm run lint-all
-```
-
-ソースコードの自動修正:
-
-```bash
-pnpm run fix-all
+pnpm run build
 ```
 
 ## ファイル構成

@@ -4,13 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "astro build",
+    "check": "astro sync && astro check && pnpm run fmt --check && pnpm run lint",
+    "check:fix": "astro sync && astro check && pnpm run lint --fix && pnpm run fmt",
     "dev": "astro dev",
-    "fix-all": "node --run lint:fix && node --run format",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "fmt": "prettier --write . --log-level warn",
     "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "lint-all": "astro sync && astro check && node --run lint && node --run format:check",
     "preview": "astro preview",
     "test": "vitest --passWithNoTests"
   },
