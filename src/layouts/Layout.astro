@@ -33,8 +33,6 @@ const isHome = Astro.props.isHome === true;
 const is404 = Astro.props.is404 === true;
 
 const { description, ogType = 'website', ogImage = defaultOgImage.src } = Astro.props;
-
-const resolvedOgImage = new URL(ogImage, Astro.url);
 ---
 
 <html lang={config.lang}>
@@ -65,7 +63,7 @@ const resolvedOgImage = new URL(ogImage, Astro.url);
 
     <meta property="og:title" content={isHome ? Astro.props.tagline : Astro.props.title} />
     <meta property="og:type" content={ogType} />
-    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url)} />
     {!is404 && <meta property="og:url" content={Astro.url} />}
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content={config.siteTitle} />
