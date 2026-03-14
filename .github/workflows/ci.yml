@@ -27,9 +27,6 @@ jobs:
           cache: true
 
       - run: pnpm install
-
       - run: pnpm run check
-
       - run: pnpm run test
-
       - run: pnpm run build
