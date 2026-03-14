@@ -11,16 +11,9 @@ export default defineConfig({
     define: {
       'import.meta.vitest': 'undefined',
     },
-    plugins: [
-      // @ts-expect-error tailwindcss cause type errors
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
   devToolbar: {
     enabled: false,
-  },
-  experimental: {
-    preserveScriptOrder: true,
-    headingIdCompat: true,
   },
 });

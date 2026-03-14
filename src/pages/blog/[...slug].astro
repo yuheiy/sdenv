@@ -1,18 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Hero from '../../components/Hero.astro';
 import Layout from '../../layouts/Layout.astro';
 import { dateFormatter } from '../../lib/date-time-formatter';
 
 export async function getStaticPaths() {
   return (await getCollection('blog')).map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout
