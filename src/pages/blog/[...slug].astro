@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Hero from '../../components/Hero.astro';
 import Layout from '../../layouts/Layout.astro';
-import { dateFormatter } from '../../lib/date-time-formatter';
+import { getFormattedDate } from '../../utils/utils';
 
 export async function getStaticPaths() {
   return (await getCollection('blog')).map((entry) => ({
@@ -23,7 +23,7 @@ const { Content } = await render(entry);
 >
   <Hero title={entry.data.title}>
     <time datetime={entry.data.pubDate.toISOString()}>
-      {dateFormatter.format(entry.data.pubDate)}
+      {getFormattedDate(entry.data.pubDate)}
     </time>
   </Hero>
 
