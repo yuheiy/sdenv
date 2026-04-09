@@ -6,7 +6,7 @@ blockExoticSubdeps: true
 
 engineStrict: true
 
-minimumReleaseAge: 1440 # At least a day
+minimumReleaseAge: 4320 # 3 days
 
 strictDepBuilds: true
 
@@ -14,4 +14,4 @@ strictPeerDependencies: true
 
 trustPolicy: no-downgrade
 
-trustPolicyIgnoreAfter: 10080 # 1 week
+trustPolicyIgnoreAfter: 43200 # 30 days
