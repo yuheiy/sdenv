@@ -30,7 +30,7 @@
     "@types/alpinejs": "^3.13.11",
     "@typescript-eslint/parser": "^8.58.0",
     "eslint": "^9.39.4",
-    "eslint-plugin-astro": "^1.6.0",
+    "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-better-tailwindcss": "^4.3.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "postcss-load-config": "^6.0.1",
