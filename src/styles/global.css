@@ -25,10 +25,6 @@
     }
   }
 
-  a {
-    text-underline-offset: 0.12em;
-  }
-
   /*
    * Disable automatic spacing insertion for code blocks and input fields.
    * Precise character positioning is critical for these elements.
@@ -85,6 +81,11 @@
   transition-property:
     color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from,
     --tw-gradient-via, --tw-gradient-to;
+}
+
+/* Always pair `text-underline-offset` with `text-decoration: underline`. */
+@utility underline {
+  text-underline-offset: 0.12em;
 }
 
 @import './prose.css' layer(components);
