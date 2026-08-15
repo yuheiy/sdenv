@@ -22,7 +22,7 @@ export default defineConfig(
   astro.configs['flat/jsx-a11y-recommended'],
 
   {
-    extends: [betterTailwindcss.configs.recommended as never],
+    extends: [betterTailwindcss.configs.recommended],
     rules: {
       'better-tailwindcss/enforce-consistent-line-wrapping': [
         'warn',
