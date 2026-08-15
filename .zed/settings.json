@@ -1,0 +1,28 @@
+{
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
+  "format_on_save": "on",
+  "languages": {
+    "Astro": {
+      "language_servers": ["astro-language-server", "tailwindcss-language-server", "eslint"]
+    }
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "astro": "html"
+        },
+        "experimental": {
+          "classRegex": [
+            "class=\"([^\"]*)\"",
+            "class='([^']*)'",
+            "class:list=\"{([^}]*)}\"",
+            "class:list='{([^}]*)}'"
+          ]
+        }
+      }
+    }
+  }
+}
