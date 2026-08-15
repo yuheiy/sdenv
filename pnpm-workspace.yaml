@@ -1,6 +1,5 @@
 allowBuilds:
   esbuild: true
-  sharp: true
 
 engineStrict: true
 

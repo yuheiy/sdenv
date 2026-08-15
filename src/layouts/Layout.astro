@@ -1,7 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components';
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
+import Logo from '../assets/logo.svg';
 import defaultOgImage from '../assets/og-image.png';
 import { SITE } from '../config';
 import '../styles/global.css';
@@ -91,7 +91,7 @@ const { description, ogType = 'website', ogImage = defaultOgImage.src } = Astro.
         <li class="mr-auto">
           {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
           <a class="block py-4" href={isHome ? null : '/'}>
-            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={SITE.title} />
+            <Logo class="h-5 w-auto fill-current" role="img" aria-label={SITE.title} />
           </a>
         </li>
         <li>

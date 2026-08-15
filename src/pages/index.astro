@@ -1,6 +1,6 @@
 ---
-import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
+import Logo from '../assets/logo.svg';
 import { SITE } from '../config';
 import Layout from '../layouts/Layout.astro';
 
@@ -39,9 +39,8 @@ const developmentStacks = [
 <Layout isHome tagline={tagline} description={description}>
   <header class="wrapper py-[--fluid(4rem,10rem)]">
     <h1>
-      <Icon
-        name="logo"
-        class="mx-auto h-[--fluid(2.5rem,6rem)] w-auto text-[#111111]"
+      <Logo
+        class="mx-auto h-[--fluid(2.5rem,6rem)] w-auto fill-[#111111]"
         role="img"
         aria-label={SITE.title}
       />
