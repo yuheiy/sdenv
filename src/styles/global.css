@@ -1,12 +1,10 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Exclude `outline-color` from Tailwind's default `transition-property` value. */
-  --transition-property:
+  /* Exclude `outline-color` from transitions. */
+  --transition-property-colors:
     color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from,
-    --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
-    filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay,
-    pointer-events;
+    --tw-gradient-via, --tw-gradient-to;
 }
 
 @layer base {
@@ -69,11 +67,14 @@
   font-feature-settings: 'palt';
 }
 
-/* Exclude `outline-color` from Tailwind's default `transition-colors` value. */
-@utility transition-colors {
+/* Exclude `outline-color` from transitions. */
+@utility transition {
+  /* prettier-ignore */
   transition-property:
     color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from,
-    --tw-gradient-via, --tw-gradient-to;
+    --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
+    filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay,
+    pointer-events;
 }
 
 /* Always pair `text-underline-offset` with `text-decoration: underline`. */
