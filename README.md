@@ -35,6 +35,12 @@ pnpm install
 pnpm run dev
 ```
 
+プロダクションビルド:
+
+```bash
+pnpm run build
+```
+
 ソースコードの静的解析:
 
 ```bash
@@ -51,12 +57,6 @@ pnpm run check:fix
 
 ```bash
 pnpm run test
-```
-
-プロダクションビルド:
-
-```bash
-pnpm run build
 ```
 
 ## ファイル構成
