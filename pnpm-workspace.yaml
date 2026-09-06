@@ -5,8 +5,6 @@ engineStrict: true
 
 minimumReleaseAge: 4320 # 3 days
 
-strictPeerDependencies: true
-
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 43200 # 30 days
