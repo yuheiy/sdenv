@@ -3,14 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "astro build",
-    "check": "astro sync && astro check && pnpm run fmt --check && pnpm run lint",
-    "check:fix": "astro sync && astro check && pnpm run lint --fix && pnpm run fmt",
     "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro sync && astro check && node --run fmt -- --check && node --run lint",
+    "check:fix": "astro sync && astro check && node --run lint -- --fix && node --run fmt",
     "fmt": "prettier --write . --log-level warn",
     "lint": "eslint",
-    "preview": "astro preview",
-    "test": "vitest --passWithNoTests"
+    "test": "vitest --run"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

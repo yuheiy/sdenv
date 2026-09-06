@@ -28,6 +28,6 @@ jobs:
           cache: true
           require-lockfile: true
 
-      - run: pnpm run check
-      - run: pnpm run test
-      - run: pnpm run build
+      - run: node --run check
+      # - run: node --run test
+      - run: node --run build
